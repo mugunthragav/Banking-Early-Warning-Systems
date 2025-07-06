@@ -1,0 +1,82 @@
+<h2 class="title">Credit Risk Analysis</h2>
+
+<!-- ============================= -->
+<!-- Single Stock Import Section -->
+<!-- ============================= -->
+<div *ngIf="selectedOption === 'import'" class="section import-section">
+  <h3>Import CSV File</h3>
+  <input
+    type="file"
+    accept=".csv"
+    (change)="onFileChanges($event)"
+    class="file-input"
+  />
+</div>
+
+<!-- ============================= -->
+<!-- Generate Result or Clear Button -->
+<!-- ============================= -->
+<div *ngIf="!showResult">
+  <button class="result-btn" (click)="toggleResult()">
+    Generate Result
+  </button>
+</div>
+
+<div *ngIf="showResult">
+  <button class="clear-btn" (click)="clearResult()">Clear Result</button>
+</div>
+
+<!-- ============================= -->
+<!-- Result Display Section -->
+<!-- ============================= -->
+<div *ngIf="showResult && response">
+  <h4>Result:</h4>
+
+  <h2>Aggregate Metrics Summary</h2>
+  <p>{{ response?.aggregate_metrics_ai_summary }}</p>
+
+  <div class="metrics-box">
+    <div class="metrics-row">
+      <div class="metric-item">
+        <h3>Cumulative Expected Loss</h3>
+        <p>{{ response?.cumulative_expected_loss | number:'1.2-4' }}</p>
+      </div>
+      <div class="metric-item">
+        <h3>Credit Risk Percentage</h3>
+        <p>{{ response?.credit_risk_percentage | percent:'1.5-5' }}</p>
+      </div>
+      <div class="metric-item">
+        <h3>Defaulters Percentage</h3>
+        <p>{{ response?.defaulters_percentage | percent:'1.0-0' }}</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Results</h2>
+  <table class="excel-table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>PD Probability</th>
+        <th>Prediction</th>
+        <th>Repayment Probability</th>
+        <th>LGD</th>
+        <th>Recovery Rate</th>
+        <th>EAD</th>
+        <th>Expected Loss</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="response?.results">
+      <tr *ngFor="let result of response?.results; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ result?.pd_ml_probability | number:'1.6-6' }}</td>
+        <td>{{ result?.pd_ml_prediction }}</td>
+        <td>{{ result?.probability_of_repayment | number:'1.6-6' }}</td>
+        <td>{{ result?.lgd_ml_ann | percent:'1.2-2' }}</td>
+        <td>{{ result?.recovery_rate_ml | percent:'1.2-2' }}</td>
+        <td>{{ result?.ead_ml_meta | number:'1.2-2' }}</td>
+        <td>{{ result?.expected_loss_ml | number:'1.6-6' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

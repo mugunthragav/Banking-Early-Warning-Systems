@@ -1,0 +1,28 @@
+python-dotenv
+
+# FastAPI and ASGI Server
+fastapi
+uvicorn[standard]
+python-multipart
+# Data Validation (FastAPI dependency, good to list)
+pydantic
+
+# Database ORM and MySQL Driver
+SQLAlchemy
+mysql-connector-python
+
+# Environment Variable Management
+python-dotenv
+
+# Data Handling
+pandas
+numpy
+
+# Machine Learning (for models, scalers, etc.)
+scikit-learn
+joblib
+
+# Add your specific LLM SDK here if you're using one for the AI Interpreter
+# For example:
+openai
+# google-cloud-aiplatform

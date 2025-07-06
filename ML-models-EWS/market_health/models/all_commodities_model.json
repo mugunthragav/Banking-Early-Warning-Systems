@@ -1,0 +1,2200 @@
+{
+    "@CL#C": {
+        "accuracy": 0.9608925197287985,
+        "sharpe": -0.009174486000606039,
+        "psr": -7.106436185069066,
+        "dsr": -17.10638438179635,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 2.424842465920862,
+                "revenue_impact": 0.4849684931841724,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 7.928997281012824,
+                "revenue_impact": 1.585799456202565,
+                "capital_impact": 0.8710773674287626,
+                "liquidity_impact": 4.4000373242207935
+            },
+            "mc_var_0.99_1d": {
+                "var": 4.269334571718925,
+                "revenue_impact": 0.8538669143437851,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.7403746149268944
+            },
+            "mc_var_0.99_10d": {
+                "var": 11.828743802659416,
+                "revenue_impact": 2.365748760531883,
+                "capital_impact": 4.770823889075354,
+                "liquidity_impact": 8.299783845867385
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 1.8901338403970391,
+                "revenue_impact": 0.3780267680794078,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 5.711548421596711,
+                "revenue_impact": 1.1423096843193423,
+                "capital_impact": 0.0,
+                "liquidity_impact": 2.18258846480468
+            },
+            "hist_var_0.99_1d": {
+                "var": 2.620709154591034,
+                "revenue_impact": 0.5241418309182068,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 8.201387434693101,
+                "revenue_impact": 1.6402774869386203,
+                "capital_impact": 1.1434675211090397,
+                "liquidity_impact": 4.672427477901071
+            }
+        },
+        "portfolio_var": 28.113937774369685,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 28,
+                "coverage": 0.9888844779674474
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 21,
+                "coverage": 0.9916334661354582
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 1,
+                "coverage": 0.999603017070266
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 2,
+                "coverage": 0.999203187250996
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 86,
+                "coverage": 0.9658594680428741
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 88,
+                "coverage": 0.9649402390438246
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 15,
+                "coverage": 0.9940452560539896
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 19,
+                "coverage": 0.9924302788844621
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 49.40543939508842,
+                "loss": 21.17375974075219,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 2.1173759740752187,
+                "revenue_impact": 4.234751948150438,
+                "capital_impact": 14.115839827168127,
+                "liquidity_impact": 17.64479978396016
+            },
+            "1987_Crash": {
+                "final_value": 35.289599567920305,
+                "loss": 35.289599567920305,
+                "drawdown": 50.0,
+                "margin_shortfall": 3.5289599567920305,
+                "revenue_impact": 7.057919913584062,
+                "capital_impact": 28.231679654336244,
+                "liquidity_impact": 31.760639611128276
+            },
+            "COVID_Drop": {
+                "final_value": 56.463359308672494,
+                "loss": 14.115839827168116,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 1.411583982716812,
+                "revenue_impact": 2.8231679654336235,
+                "capital_impact": 7.057919913584055,
+                "liquidity_impact": 10.586879870376086
+            },
+            "Rate_Hike": {
+                "final_value": 63.52127922225655,
+                "loss": 7.057919913584058,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 0.705791991358406,
+                "revenue_impact": 1.4115839827168117,
+                "capital_impact": 0.0,
+                "liquidity_impact": 3.5289599567920273
+            },
+            "Geopolitical": {
+                "final_value": 59.992319265464516,
+                "loss": 10.586879870376094,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 1.0586879870376094,
+                "revenue_impact": 2.117375974075219,
+                "capital_impact": 3.5289599567920327,
+                "liquidity_impact": 7.057919913584064
+            },
+            "Liquidity_Shortage": {
+                "final_value": 67.05023917904857,
+                "loss": 3.5289599567920362,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 0.35289599567920343,
+                "revenue_impact": 0.7057919913584073,
+                "capital_impact": 0.0,
+                "liquidity_impact": 5.329070518200751e-15
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.1816149827720352,
+            "Momentum": 0.1570567967100145,
+            "Range": 0.07584083583416698,
+            "Volume_Change": 0.0639579859953318,
+            "Returns": 0.04531065910859178,
+            "Volatility": 0.032397465821940676
+        }
+    },
+    "@C#C": {
+        "accuracy": 0.9677102087084084,
+        "sharpe": 1.7490228573645986e-05,
+        "psr": 0.013547773601494595,
+        "dsr": -9.986454007874718,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 21.778622782410853,
+                "revenue_impact": 4.355724556482171,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 70.79694246738211,
+                "revenue_impact": 14.159388493476422,
+                "capital_impact": 0.0,
+                "liquidity_impact": 31.00791760776677
+            },
+            "mc_var_0.99_1d": {
+                "var": 38.60392757977958,
+                "revenue_impact": 7.7207855159559164,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 104.11927887125171,
+                "revenue_impact": 20.823855774250344,
+                "capital_impact": 24.54122915202103,
+                "liquidity_impact": 64.33025401163637
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 16.859061286956184,
+                "revenue_impact": 3.371812257391237,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 50.258783081185285,
+                "revenue_impact": 10.051756616237057,
+                "capital_impact": 0.0,
+                "liquidity_impact": 10.469758221569947
+            },
+            "hist_var_0.99_1d": {
+                "var": 22.985790381050922,
+                "revenue_impact": 4.597158076210184,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 69.96879523164316,
+                "revenue_impact": 13.993759046328632,
+                "capital_impact": 0.0,
+                "liquidity_impact": 30.179770372027818
+            }
+        },
+        "portfolio_var": 28.113937774369685,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 15,
+                "coverage": 0.9940452560539896
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 14,
+                "coverage": 0.9944223107569721
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 57,
+                "coverage": 0.9773719730051608
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 63,
+                "coverage": 0.9749003984063745
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 12,
+                "coverage": 0.9952362048431918
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 16,
+                "coverage": 0.9936254980079682
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 557.0463480346147,
+                "loss": 238.73414915769206,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 23.873414915769203,
+                "revenue_impact": 47.74682983153841,
+                "capital_impact": 159.15609943846138,
+                "liquidity_impact": 198.94512429807673
+            },
+            "1987_Crash": {
+                "final_value": 397.89024859615336,
+                "loss": 397.89024859615336,
+                "drawdown": 50.0,
+                "margin_shortfall": 39.78902485961533,
+                "revenue_impact": 79.57804971923068,
+                "capital_impact": 318.3121988769227,
+                "liquidity_impact": 358.10122373653803
+            },
+            "COVID_Drop": {
+                "final_value": 636.6243977538454,
+                "loss": 159.1560994384613,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 15.915609943846132,
+                "revenue_impact": 31.83121988769226,
+                "capital_impact": 79.57804971923062,
+                "liquidity_impact": 119.36707457884596
+            },
+            "Rate_Hike": {
+                "final_value": 716.2024474730761,
+                "loss": 79.57804971923065,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 7.957804971923066,
+                "revenue_impact": 15.91560994384613,
+                "capital_impact": 0.0,
+                "liquidity_impact": 39.78902485961531
+            },
+            "Geopolitical": {
+                "final_value": 676.4134226134607,
+                "loss": 119.36707457884597,
+                "drawdown": 14.999999999999991,
+                "margin_shortfall": 11.936707457884593,
+                "revenue_impact": 23.873414915769196,
+                "capital_impact": 39.789024859615296,
+                "liquidity_impact": 79.57804971923063
+            },
+            "Liquidity_Shortage": {
+                "final_value": 755.9914723326914,
+                "loss": 39.789024859615324,
+                "drawdown": 4.999999999999993,
+                "margin_shortfall": 3.978902485961528,
+                "revenue_impact": 7.957804971923065,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.17028961347825128,
+            "Momentum": 0.16718121402058195,
+            "Range": 0.09471227578849109,
+            "Volume_Change": 0.07406592429597036,
+            "Volatility": 0.060582116423284704,
+            "Returns": 0.03567824676046327
+        }
+    },
+    "@ES": {
+        "accuracy": 0.9792250077788149,
+        "sharpe": -0.006157723155965773,
+        "psr": -4.769920586902484,
+        "dsr": -14.770349361802483,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 162.37957573053743,
+                "revenue_impact": 32.47591514610749,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 525.5035154735197,
+                "revenue_impact": 105.10070309470393,
+                "capital_impact": 0.0,
+                "liquidity_impact": 117.21274034084297
+            },
+            "mc_var_0.99_1d": {
+                "var": 292.26689069857747,
+                "revenue_impact": 58.4533781397155,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 790.7060576470454,
+                "revenue_impact": 158.1412115294091,
+                "capital_impact": 0.0,
+                "liquidity_impact": 382.41528251436876
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 124.3823923551522,
+                "revenue_impact": 24.876478471030442,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 376.51525236532063,
+                "revenue_impact": 75.30305047306413,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 176.74214695828096,
+                "revenue_impact": 35.34842939165619,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 517.80526639618,
+                "revenue_impact": 103.56105327923599,
+                "capital_impact": 0.0,
+                "liquidity_impact": 109.51449126350326
+            }
+        },
+        "portfolio_var": 28.113937774369685,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 11,
+                "coverage": 0.9956331877729258
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 4,
+                "coverage": 0.998406374501992
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 37,
+                "coverage": 0.9853116315998413
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 33,
+                "coverage": 0.9868525896414343
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 7,
+                "coverage": 0.9972211194918619
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 4,
+                "coverage": 0.998406374501992
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 5716.070851857473,
+                "loss": 2449.7446507960603,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 244.974465079606,
+                "revenue_impact": 489.94893015921207,
+                "capital_impact": 1633.163100530707,
+                "liquidity_impact": 2041.4538756633838
+            },
+            "1987_Crash": {
+                "final_value": 4082.9077513267666,
+                "loss": 4082.9077513267666,
+                "drawdown": 50.0,
+                "margin_shortfall": 408.29077513267663,
+                "revenue_impact": 816.5815502653534,
+                "capital_impact": 3266.3262010614135,
+                "liquidity_impact": 3674.61697619409
+            },
+            "COVID_Drop": {
+                "final_value": 6532.652402122827,
+                "loss": 1633.1631005307063,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 163.31631005307062,
+                "revenue_impact": 326.6326201061413,
+                "capital_impact": 816.5815502653529,
+                "liquidity_impact": 1224.8723253980297
+            },
+            "Rate_Hike": {
+                "final_value": 7349.23395238818,
+                "loss": 816.5815502653531,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 81.65815502653531,
+                "revenue_impact": 163.31631005307065,
+                "capital_impact": 0.0,
+                "liquidity_impact": 408.29077513267646
+            },
+            "Geopolitical": {
+                "final_value": 6940.9431772555035,
+                "loss": 1224.8723253980297,
+                "drawdown": 14.999999999999991,
+                "margin_shortfall": 122.48723253980293,
+                "revenue_impact": 244.97446507960595,
+                "capital_impact": 408.29077513267634,
+                "liquidity_impact": 816.581550265353
+            },
+            "Liquidity_Shortage": {
+                "final_value": 7757.524727520857,
+                "loss": 408.2907751326766,
+                "drawdown": 4.999999999999993,
+                "margin_shortfall": 40.829077513267606,
+                "revenue_impact": 81.65815502653533,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.18838734053429346,
+            "Momentum": 0.16352291416633324,
+            "Volume_Change": 0.16072587456105258,
+            "Range": 0.09857981064141885,
+            "Volatility": 0.05220251589100768,
+            "Returns": 0.04694292572342975
+        }
+    },
+    "@NG": {
+        "accuracy": 0.9625548090228573,
+        "sharpe": -0.00525963200736817,
+        "psr": -4.073935490578187,
+        "dsr": -14.073622810205915,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 4.23550275900023,
+                "revenue_impact": 0.8471005518000461,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 13.746895374233546,
+                "revenue_impact": 2.7493790748467095,
+                "capital_impact": 1.3586096823478897,
+                "liquidity_impact": 7.552752528290718
+            },
+            "mc_var_0.99_1d": {
+                "var": 7.584329963825885,
+                "revenue_impact": 1.516865992765177,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.3901871178830572
+            },
+            "mc_var_0.99_10d": {
+                "var": 20.34945769116461,
+                "revenue_impact": 4.069891538232922,
+                "capital_impact": 7.961171999278953,
+                "liquidity_impact": 14.155314845221781
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 3.192392500977411,
+                "revenue_impact": 0.6384785001954822,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 9.489183388248966,
+                "revenue_impact": 1.8978366776497932,
+                "capital_impact": 0.0,
+                "liquidity_impact": 3.295040542306138
+            },
+            "hist_var_0.99_1d": {
+                "var": 4.539690108168684,
+                "revenue_impact": 0.9079380216337368,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 13.301858615470119,
+                "revenue_impact": 2.660371723094024,
+                "capital_impact": 0.9135729235844625,
+                "liquidity_impact": 7.107715769527291
+            }
+        },
+        "portfolio_var": 28.113937774369685,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 2,
+                "coverage": 0.999206034140532
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 2,
+                "coverage": 0.999203187250996
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 37,
+                "coverage": 0.9853116315998413
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 25,
+                "coverage": 0.9900398406374502
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 2,
+                "coverage": 0.999203187250996
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 86.71799984319959,
+                "loss": 37.16485707565697,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 3.7164857075656976,
+                "revenue_impact": 7.432971415131394,
+                "capital_impact": 24.776571383771312,
+                "liquidity_impact": 30.97071422971414
+            },
+            "1987_Crash": {
+                "final_value": 61.94142845942828,
+                "loss": 61.94142845942828,
+                "drawdown": 50.0,
+                "margin_shortfall": 6.194142845942829,
+                "revenue_impact": 12.388285691885656,
+                "capital_impact": 49.553142767542624,
+                "liquidity_impact": 55.74728561348545
+            },
+            "COVID_Drop": {
+                "final_value": 99.10628553508525,
+                "loss": 24.776571383771312,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 2.477657138377131,
+                "revenue_impact": 4.955314276754263,
+                "capital_impact": 12.388285691885656,
+                "liquidity_impact": 18.582428537828484
+            },
+            "Rate_Hike": {
+                "final_value": 111.4945712269709,
+                "loss": 12.388285691885656,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 1.2388285691885654,
+                "revenue_impact": 2.4776571383771313,
+                "capital_impact": 0.0,
+                "liquidity_impact": 6.194142845942828
+            },
+            "Geopolitical": {
+                "final_value": 105.30042838102807,
+                "loss": 18.58242853782849,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 1.8582428537828488,
+                "revenue_impact": 3.7164857075656985,
+                "capital_impact": 6.194142845942835,
+                "liquidity_impact": 12.388285691885663
+            },
+            "Liquidity_Shortage": {
+                "final_value": 117.68871407291373,
+                "loss": 6.194142845942835,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 0.6194142845942834,
+                "revenue_impact": 1.2388285691885672,
+                "capital_impact": 0.0,
+                "liquidity_impact": 7.105427357601002e-15
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.17383838215434894,
+            "Momentum": 0.14689762869353076,
+            "Range": 0.10036289269379753,
+            "Volume_Change": 0.06001456016627493,
+            "Volatility": 0.05318573103705067,
+            "Returns": 0.04669256375630064
+        }
+    },
+    "@SI": {
+        "accuracy": 0.9688493254206397,
+        "sharpe": 0.02348730950538409,
+        "psr": 18.194548886811628,
+        "dsr": 8.19372790104248,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 74.4630318712819,
+                "revenue_impact": 14.892606374256381,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 241.51615062345655,
+                "revenue_impact": 48.30323012469131,
+                "capital_impact": 0.0,
+                "liquidity_impact": 89.22295984357055
+            },
+            "mc_var_0.99_1d": {
+                "var": 132.6334238532024,
+                "revenue_impact": 26.526684770640482,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 362.37597909383976,
+                "revenue_impact": 72.47519581876796,
+                "capital_impact": 57.78959753406775,
+                "liquidity_impact": 210.08278831395376
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 57.44474701107364,
+                "revenue_impact": 11.488949402214729,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 169.2135795765223,
+                "revenue_impact": 33.84271591530446,
+                "capital_impact": 0.0,
+                "liquidity_impact": 16.920388796636303
+            },
+            "hist_var_0.99_1d": {
+                "var": 78.5321009640003,
+                "revenue_impact": 15.706420192800062,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 225.27058845522737,
+                "revenue_impact": 45.05411769104548,
+                "capital_impact": 0.0,
+                "liquidity_impact": 72.97739767534136
+            }
+        },
+        "portfolio_var": 28.113937774369685,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 24,
+                "coverage": 0.9904724096863835
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 16,
+                "coverage": 0.9936254980079682
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 91,
+                "coverage": 0.963874553394204
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 90,
+                "coverage": 0.9641434262948207
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 18,
+                "coverage": 0.9928543072647876
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 22,
+                "coverage": 0.9912350597609562
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 2132.104670918404,
+                "loss": 913.7591446793163,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 91.37591446793162,
+                "revenue_impact": 182.75182893586327,
+                "capital_impact": 609.1727631195442,
+                "liquidity_impact": 761.4659538994302
+            },
+            "1987_Crash": {
+                "final_value": 1522.93190779886,
+                "loss": 1522.93190779886,
+                "drawdown": 50.0,
+                "margin_shortfall": 152.293190779886,
+                "revenue_impact": 304.586381559772,
+                "capital_impact": 1218.345526239088,
+                "liquidity_impact": 1370.6387170189741
+            },
+            "COVID_Drop": {
+                "final_value": 2436.691052478176,
+                "loss": 609.172763119544,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 60.917276311954396,
+                "revenue_impact": 121.8345526239088,
+                "capital_impact": 304.586381559772,
+                "liquidity_impact": 456.879572339658
+            },
+            "Rate_Hike": {
+                "final_value": 2741.2774340379483,
+                "loss": 304.5863815597718,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 30.458638155977198,
+                "revenue_impact": 60.91727631195436,
+                "capital_impact": 0.0,
+                "liquidity_impact": 152.29319077988578
+            },
+            "Geopolitical": {
+                "final_value": 2588.984243258062,
+                "loss": 456.8795723396579,
+                "drawdown": 14.999999999999991,
+                "margin_shortfall": 45.68795723396578,
+                "revenue_impact": 91.37591446793158,
+                "capital_impact": 152.2931907798859,
+                "liquidity_impact": 304.5863815597719
+            },
+            "Liquidity_Shortage": {
+                "final_value": 2893.570624817834,
+                "loss": 152.29319077988612,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 15.229319077988613,
+                "revenue_impact": 30.458638155977226,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.1368683772161603e-13
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.17069191616101004,
+            "Momentum": 0.15996088106510192,
+            "Range": 0.12958480585005897,
+            "Volume_Change": 0.09791736125002785,
+            "Volatility": 0.05376853148407466,
+            "Returns": 0.040612566957836084
+        }
+    },
+    "@TY": {
+        "accuracy": 0.9908885345541215,
+        "sharpe": 0.019460116568159422,
+        "psr": 15.065262147085383,
+        "dsr": 5.070812420677091,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 1.6845216310910236,
+                "revenue_impact": 0.33690432621820476,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 5.564143739814467,
+                "revenue_impact": 1.1128287479628935,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_1d": {
+                "var": 2.977197163240741,
+                "revenue_impact": 0.5954394326481481,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 8.397847464848018,
+                "revenue_impact": 1.6795694929696037,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.6527996973087262
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 1.3066870200078808,
+                "revenue_impact": 0.2613374040015762,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 4.009253719240059,
+                "revenue_impact": 0.8018507438480118,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 1.8689413999292552,
+                "revenue_impact": 0.37378827998585107,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 5.520898133351137,
+                "revenue_impact": 1.1041796266702275,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "portfolio_var": 18.534613353083657,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 21,
+                "coverage": 0.9916633584755855
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 14,
+                "coverage": 0.9944223107569721
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 3,
+                "coverage": 0.998804780876494
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 72,
+                "coverage": 0.9714172290591505
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 70,
+                "coverage": 0.9721115537848606
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 11,
+                "coverage": 0.9956331877729258
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 14,
+                "coverage": 0.9944223107569721
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 108.43066874555008,
+                "loss": 46.470286605235756,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 4.647028660523577,
+                "revenue_impact": 9.294057321047152,
+                "capital_impact": 30.980191070157172,
+                "liquidity_impact": 38.725238837696466
+            },
+            "1987_Crash": {
+                "final_value": 77.45047767539292,
+                "loss": 77.45047767539292,
+                "drawdown": 50.0,
+                "margin_shortfall": 7.745047767539293,
+                "revenue_impact": 15.490095535078584,
+                "capital_impact": 61.96038214031434,
+                "liquidity_impact": 69.70542990785363
+            },
+            "COVID_Drop": {
+                "final_value": 123.92076428062867,
+                "loss": 30.98019107015716,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 3.098019107015716,
+                "revenue_impact": 6.196038214031432,
+                "capital_impact": 15.490095535078577,
+                "liquidity_impact": 23.23514330261787
+            },
+            "Rate_Hike": {
+                "final_value": 139.41085981570725,
+                "loss": 15.49009553507858,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 1.549009553507858,
+                "revenue_impact": 3.098019107015716,
+                "capital_impact": 0.0,
+                "liquidity_impact": 7.745047767539289
+            },
+            "Geopolitical": {
+                "final_value": 131.66581204816796,
+                "loss": 23.23514330261787,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 2.3235143302617884,
+                "revenue_impact": 4.647028660523574,
+                "capital_impact": 7.745047767539287,
+                "liquidity_impact": 15.490095535078579
+            },
+            "Liquidity_Shortage": {
+                "final_value": 147.15590758324655,
+                "loss": 7.74504776753929,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 0.7745047767539299,
+                "revenue_impact": 1.549009553507858,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "mdi_imp": {
+            "Momentum": 0.20496463751368105,
+            "Range": 0.1721466945936786,
+            "Volume_Change": 0.15834282444317277,
+            "Lagged_Returns": 0.15362597434344666,
+            "Volatility": 0.11456112182140414,
+            "Returns": 0.07646630702305086
+        }
+    },
+    "@AD": {
+        "accuracy": 0.9856711873635318,
+        "sharpe": 0.011398369857911348,
+        "psr": 8.827034778842336,
+        "dsr": -1.1706565653563974,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 0.022647282401271864,
+                "revenue_impact": 0.004529456480254373,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 0.07345475092057174,
+                "revenue_impact": 0.01469095018411435,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_1d": {
+                "var": 0.039323921776195155,
+                "revenue_impact": 0.00786478435523903,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 0.11108906595478589,
+                "revenue_impact": 0.02221781319095718,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.031027215804235467
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 0.01703887554623831,
+                "revenue_impact": 0.003407775109247662,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 0.05234137538793562,
+                "revenue_impact": 0.010468275077587123,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 0.02502020580115923,
+                "revenue_impact": 0.005004041160231846,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 0.07148211519062667,
+                "revenue_impact": 0.014296423038125334,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "portfolio_var": 18.534613353083657,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 7,
+                "coverage": 0.9972211194918619
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 1,
+                "coverage": 0.999601593625498
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 46,
+                "coverage": 0.981738785232235
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 31,
+                "coverage": 0.9876494023904383
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 5,
+                "coverage": 0.9980150853513299
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 2,
+                "coverage": 0.999203187250996
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 1.1208659021077059,
+                "loss": 0.4803711009033025,
+                "drawdown": 29.999999999999993,
+                "margin_shortfall": 0.04803711009033024,
+                "revenue_impact": 0.0960742201806605,
+                "capital_impact": 0.32024740060220164,
+                "liquidity_impact": 0.40030925075275203
+            },
+            "1987_Crash": {
+                "final_value": 0.8006185015055042,
+                "loss": 0.8006185015055042,
+                "drawdown": 50.0,
+                "margin_shortfall": 0.08006185015055042,
+                "revenue_impact": 0.16012370030110085,
+                "capital_impact": 0.6404948012044034,
+                "liquidity_impact": 0.7205566513549537
+            },
+            "COVID_Drop": {
+                "final_value": 1.2809896024088068,
+                "loss": 0.3202474006022016,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 0.032024740060220165,
+                "revenue_impact": 0.06404948012044032,
+                "capital_impact": 0.16012370030110074,
+                "liquidity_impact": 0.24018555045165116
+            },
+            "Rate_Hike": {
+                "final_value": 1.4411133027099075,
+                "loss": 0.1601237003011009,
+                "drawdown": 10.000000000000009,
+                "margin_shortfall": 0.0160123700301101,
+                "revenue_impact": 0.03202474006022018,
+                "capital_impact": 5.551115123125783e-17,
+                "liquidity_impact": 0.08006185015055048
+            },
+            "Geopolitical": {
+                "final_value": 1.3610514525593571,
+                "loss": 0.24018555045165124,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 0.024018555045165133,
+                "revenue_impact": 0.04803711009033025,
+                "capital_impact": 0.0800618501505504,
+                "liquidity_impact": 0.16012370030110082
+            },
+            "Liquidity_Shortage": {
+                "final_value": 1.5211751528604578,
+                "loss": 0.08006185015055056,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 0.00800618501505505,
+                "revenue_impact": 0.016012370030110114,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.3877787807814457e-16
+            }
+        },
+        "mdi_imp": {
+            "Momentum": 0.21418880252462671,
+            "Lagged_Returns": 0.20094340146788375,
+            "Range": 0.14337591048242365,
+            "Volume_Change": 0.13113058165311936,
+            "Volatility": 0.108491168806636,
+            "Returns": 0.044977692833371254
+        }
+    },
+    "@EC": {
+        "accuracy": 0.9791041624997222,
+        "sharpe": 0.031100396838379292,
+        "psr": 24.081012510578027,
+        "dsr": 14.084777800558818,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 0.01817992418034441,
+                "revenue_impact": 0.003635984836068882,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 0.06032945695695512,
+                "revenue_impact": 0.012065891391391026,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_1d": {
+                "var": 0.03229794490554877,
+                "revenue_impact": 0.006459588981109755,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 0.0900390031646945,
+                "revenue_impact": 0.0180078006329389,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.02324296459937232
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 0.013667502163369255,
+                "revenue_impact": 0.0027335004326738514,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 0.04055143340480089,
+                "revenue_impact": 0.008110286680960178,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 0.021021820596018256,
+                "revenue_impact": 0.004204364119203652,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 0.06089010974863025,
+                "revenue_impact": 0.012178021949726052,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "portfolio_var": 18.534613353083657,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 25,
+                "coverage": 0.9900754267566495
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 13,
+                "coverage": 0.9948207171314741
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 1,
+                "coverage": 0.999603017070266
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 79,
+                "coverage": 0.9686383485510123
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 72,
+                "coverage": 0.9713147410358566
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 11,
+                "coverage": 0.9956331877729258
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 12,
+                "coverage": 0.9952191235059761
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 0.9351445399145104,
+                "loss": 0.4007762313919332,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 0.040077623139193316,
+                "revenue_impact": 0.08015524627838665,
+                "capital_impact": 0.26718415426128883,
+                "liquidity_impact": 0.333980192826611
+            },
+            "1987_Crash": {
+                "final_value": 0.6679603856532218,
+                "loss": 0.6679603856532218,
+                "drawdown": 50.0,
+                "margin_shortfall": 0.06679603856532218,
+                "revenue_impact": 0.13359207713064436,
+                "capital_impact": 0.5343683085225774,
+                "liquidity_impact": 0.6011643470878996
+            },
+            "COVID_Drop": {
+                "final_value": 1.0687366170451549,
+                "loss": 0.2671841542612887,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 0.026718415426128867,
+                "revenue_impact": 0.05343683085225775,
+                "capital_impact": 0.13359207713064436,
+                "liquidity_impact": 0.20038811569596654
+            },
+            "Rate_Hike": {
+                "final_value": 1.2023286941757994,
+                "loss": 0.13359207713064425,
+                "drawdown": 9.999999999999986,
+                "margin_shortfall": 0.013359207713064418,
+                "revenue_impact": 0.02671841542612885,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.06679603856532207
+            },
+            "Geopolitical": {
+                "final_value": 1.135532655610477,
+                "loss": 0.2003881156959666,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 0.020038811569596658,
+                "revenue_impact": 0.04007762313919332,
+                "capital_impact": 0.06679603856532224,
+                "liquidity_impact": 0.13359207713064442
+            },
+            "Liquidity_Shortage": {
+                "final_value": 1.2691247327411213,
+                "loss": 0.06679603856532235,
+                "drawdown": 5.000000000000016,
+                "margin_shortfall": 0.006679603856532239,
+                "revenue_impact": 0.01335920771306447,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.6653345369377348e-16
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.18858257217147809,
+            "Momentum": 0.1683512234148943,
+            "Volume_Change": 0.12189701535657933,
+            "Range": 0.1205769273507123,
+            "Returns": 0.08053314665422143,
+            "Volatility": 0.06724448296553107
+        }
+    },
+    "@6E": {
+        "accuracy": 0.9734578670726423,
+        "sharpe": 0.007333169603914092,
+        "psr": 5.680354388664193,
+        "dsr": -4.319906588685868,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 149.3578678408288,
+                "revenue_impact": 29.871573568165758,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 484.45535646895644,
+                "revenue_impact": 96.8910712937913,
+                "capital_impact": 0.0,
+                "liquidity_impact": 119.1829803082536
+            },
+            "mc_var_0.99_1d": {
+                "var": 265.6472420387938,
+                "revenue_impact": 53.129448407758765,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 729.930509512249,
+                "revenue_impact": 145.9861019024498,
+                "capital_impact": 0.0,
+                "liquidity_impact": 364.6581333515462
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 111.34237962967825,
+                "revenue_impact": 22.26847592593565,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 323.53616307329565,
+                "revenue_impact": 64.70723261465913,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 160.82770519862677,
+                "revenue_impact": 32.165541039725355,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 488.81408567957965,
+                "revenue_impact": 97.76281713591594,
+                "capital_impact": 0.0,
+                "liquidity_impact": 123.54170951887681
+            }
+        },
+        "portfolio_var": 18.534613353083657,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 10,
+                "coverage": 0.9960301707026598
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 1,
+                "coverage": 0.999601593625498
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 28,
+                "coverage": 0.9888844779674474
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 38,
+                "coverage": 0.9848605577689243
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 8,
+                "coverage": 0.9968241365621279
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 1,
+                "coverage": 0.999601593625498
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 5113.813266249838,
+                "loss": 2191.6342569642175,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 219.16342569642174,
+                "revenue_impact": 438.32685139284354,
+                "capital_impact": 1461.0895046428118,
+                "liquidity_impact": 1826.3618808035146
+            },
+            "1987_Crash": {
+                "final_value": 3652.723761607028,
+                "loss": 3652.723761607028,
+                "drawdown": 50.0,
+                "margin_shortfall": 365.2723761607028,
+                "revenue_impact": 730.5447523214057,
+                "capital_impact": 2922.179009285622,
+                "liquidity_impact": 3287.451385446325
+            },
+            "COVID_Drop": {
+                "final_value": 5844.358018571245,
+                "loss": 1461.0895046428104,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 146.10895046428107,
+                "revenue_impact": 292.2179009285621,
+                "capital_impact": 730.5447523214048,
+                "liquidity_impact": 1095.8171284821076
+            },
+            "Rate_Hike": {
+                "final_value": 6574.902770892651,
+                "loss": 730.5447523214052,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 73.05447523214053,
+                "revenue_impact": 146.10895046428104,
+                "capital_impact": 0.0,
+                "liquidity_impact": 365.2723761607024
+            },
+            "Geopolitical": {
+                "final_value": 6209.6303947319475,
+                "loss": 1095.8171284821083,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 109.58171284821087,
+                "revenue_impact": 219.16342569642165,
+                "capital_impact": 365.2723761607026,
+                "liquidity_impact": 730.5447523214054
+            },
+            "Liquidity_Shortage": {
+                "final_value": 6940.175147053353,
+                "loss": 365.27237616070306,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 36.527237616070316,
+                "revenue_impact": 73.05447523214062,
+                "capital_impact": 0.0,
+                "liquidity_impact": 2.2737367544323206e-13
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.179241907344231,
+            "Momentum": 0.1499527720054674,
+            "Range": 0.12054473324517445,
+            "Volume_Change": 0.11154363311071355,
+            "Volatility": 0.06768049428263459,
+            "Returns": 0.039692629099112156
+        }
+    },
+    "@GC": {
+        "accuracy": 0.9860770042780155,
+        "sharpe": 0.02382923820393728,
+        "psr": 18.459630572525402,
+        "dsr": 8.458698470750674,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 2.130103527888027,
+                "revenue_impact": 0.42602070557760546,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 6.926773141698169,
+                "revenue_impact": 1.3853546283396339,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_1d": {
+                "var": 3.766883387330406,
+                "revenue_impact": 0.7533766774660813,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 10.485154804683882,
+                "revenue_impact": 2.0970309609367765,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.4910855689079945
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 1.62771315169355,
+                "revenue_impact": 0.32554263033871,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 4.803123567421009,
+                "revenue_impact": 0.9606247134842019,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 2.347594702936144,
+                "revenue_impact": 0.4695189405872288,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 7.089824194693858,
+                "revenue_impact": 1.4179648389387716,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "portfolio_var": 18.534613353083657,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 13,
+                "coverage": 0.9948392219134577
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 13,
+                "coverage": 0.9948207171314741
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 1,
+                "coverage": 0.999601593625498
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 52,
+                "coverage": 0.9793568876538309
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 63,
+                "coverage": 0.9749003984063745
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 10,
+                "coverage": 0.9960301707026598
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 12,
+                "coverage": 0.9952191235059761
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 139.9169693008624,
+                "loss": 59.96441541465532,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 5.996441541465532,
+                "revenue_impact": 11.992883082931066,
+                "capital_impact": 39.97627694310354,
+                "liquidity_impact": 49.97034617887943
+            },
+            "1987_Crash": {
+                "final_value": 99.94069235775886,
+                "loss": 99.94069235775886,
+                "drawdown": 50.0,
+                "margin_shortfall": 9.994069235775887,
+                "revenue_impact": 19.988138471551775,
+                "capital_impact": 79.95255388620708,
+                "liquidity_impact": 89.94662312198298
+            },
+            "COVID_Drop": {
+                "final_value": 159.9051077724142,
+                "loss": 39.97627694310353,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 3.997627694310354,
+                "revenue_impact": 7.995255388620706,
+                "capital_impact": 19.988138471551753,
+                "liquidity_impact": 29.98220770732764
+            },
+            "Rate_Hike": {
+                "final_value": 179.89324624396596,
+                "loss": 19.988138471551764,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 1.998813847155177,
+                "revenue_impact": 3.997627694310353,
+                "capital_impact": 0.0,
+                "liquidity_impact": 9.994069235775877
+            },
+            "Geopolitical": {
+                "final_value": 169.89917700819007,
+                "loss": 29.98220770732766,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 2.998220770732766,
+                "revenue_impact": 5.996441541465533,
+                "capital_impact": 9.994069235775886,
+                "liquidity_impact": 19.98813847155177
+            },
+            "Liquidity_Shortage": {
+                "final_value": 189.88731547974183,
+                "loss": 9.994069235775896,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 0.9994069235775896,
+                "revenue_impact": 1.9988138471551793,
+                "capital_impact": 0.0,
+                "liquidity_impact": 8.881784197001252e-15
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.2008289349408301,
+            "Momentum": 0.1800733374076338,
+            "Volume_Change": 0.1532140674481916,
+            "Returns": 0.09293405189177181,
+            "Range": 0.08453580754486364,
+            "Volatility": 0.06961608978276572
+        }
+    },
+    "@LE": {
+        "accuracy": 0.9818147471121952,
+        "sharpe": -0.019023698864673373,
+        "psr": -14.733294010043766,
+        "dsr": -24.731740458326676,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 130.58202413545214,
+                "revenue_impact": 26.11640482709043,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 426.162040348109,
+                "revenue_impact": 85.2324080696218,
+                "capital_impact": 0.0,
+                "liquidity_impact": 116.43896326870816
+            },
+            "mc_var_0.99_1d": {
+                "var": 230.64758126810906,
+                "revenue_impact": 46.129516253621816,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 644.4799329041754,
+                "revenue_impact": 128.89598658083509,
+                "capital_impact": 25.033778745373752,
+                "liquidity_impact": 334.75685582477456
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 100.16137730461237,
+                "revenue_impact": 20.032275460922477,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 315.92422245833535,
+                "revenue_impact": 63.18484449166707,
+                "capital_impact": 0.0,
+                "liquidity_impact": 6.201145378934541
+            },
+            "hist_var_0.99_1d": {
+                "var": 146.20123308675434,
+                "revenue_impact": 29.24024661735087,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 457.57430585297055,
+                "revenue_impact": 91.51486117059412,
+                "capital_impact": 0.0,
+                "liquidity_impact": 147.85122877356974
+            }
+        },
+        "portfolio_var": 89.54353338983542,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 38,
+                "coverage": 0.9849146486701071
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 13,
+                "coverage": 0.9948207171314741
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 88,
+                "coverage": 0.9650655021834061
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 80,
+                "coverage": 0.9681274900398407
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 22,
+                "coverage": 0.9912663755458515
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 9,
+                "coverage": 0.996414342629482
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 4336.12307911161,
+                "loss": 1858.3384624764049,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 185.83384624764048,
+                "revenue_impact": 371.667692495281,
+                "capital_impact": 1238.8923083176032,
+                "liquidity_impact": 1548.615385397004
+            },
+            "1987_Crash": {
+                "final_value": 3097.2307707940076,
+                "loss": 3097.2307707940076,
+                "drawdown": 50.0,
+                "margin_shortfall": 309.7230770794008,
+                "revenue_impact": 619.4461541588016,
+                "capital_impact": 2477.784616635206,
+                "liquidity_impact": 2787.507693714607
+            },
+            "COVID_Drop": {
+                "final_value": 4955.569233270413,
+                "loss": 1238.8923083176023,
+                "drawdown": 19.999999999999986,
+                "margin_shortfall": 123.88923083176022,
+                "revenue_impact": 247.7784616635205,
+                "capital_impact": 619.4461541588007,
+                "liquidity_impact": 929.1692312382015
+            },
+            "Rate_Hike": {
+                "final_value": 5575.015387429214,
+                "loss": 619.4461541588016,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 61.94461541588014,
+                "revenue_impact": 123.88923083176033,
+                "capital_impact": 0.0,
+                "liquidity_impact": 309.7230770794008
+            },
+            "Geopolitical": {
+                "final_value": 5265.292310349812,
+                "loss": 929.1692312382029,
+                "drawdown": 15.000000000000014,
+                "margin_shortfall": 92.91692312382033,
+                "revenue_impact": 185.8338462476406,
+                "capital_impact": 309.72307707940126,
+                "liquidity_impact": 619.4461541588021
+            },
+            "Liquidity_Shortage": {
+                "final_value": 5884.738464508614,
+                "loss": 309.72307707940126,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 30.972307707940107,
+                "revenue_impact": 61.94461541588026,
+                "capital_impact": 0.0,
+                "liquidity_impact": 4.547473508864641e-13
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.1997955339730305,
+            "Momentum": 0.17531072724343127,
+            "Volume_Change": 0.1091959706857946,
+            "Range": 0.10318422500152793,
+            "Volatility": 0.09605569476778106,
+            "Returns": 0.034793672665448014
+        }
+    },
+    "@NQ": {
+        "accuracy": 0.9757744131129323,
+        "sharpe": -6.195707648538177e-05,
+        "psr": -0.0479913846874908,
+        "dsr": -10.047991289964687,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 229.71002857639309,
+                "revenue_impact": 45.94200571527862,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 733.7016953222671,
+                "revenue_impact": 146.74033906445342,
+                "capital_impact": 0.0,
+                "liquidity_impact": 185.40343108164257
+            },
+            "mc_var_0.99_1d": {
+                "var": 405.72814096494994,
+                "revenue_impact": 81.14562819298999,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 1129.0289384051755,
+                "revenue_impact": 225.8057876810351,
+                "capital_impact": 32.43240992392634,
+                "liquidity_impact": 580.7306741645509
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 172.553249396185,
+                "revenue_impact": 34.510649879237,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 525.8669999245399,
+                "revenue_impact": 105.17339998490797,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 250.85064080344023,
+                "revenue_impact": 50.17012816068805,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 768.8035916613172,
+                "revenue_impact": 153.76071833226345,
+                "capital_impact": 0.0,
+                "liquidity_impact": 220.50532742069265
+            }
+        },
+        "portfolio_var": 89.54353338983542,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 18,
+                "coverage": 0.9928543072647876
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 15,
+                "coverage": 0.9940239043824701
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 2,
+                "coverage": 0.999203187250996
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 69,
+                "coverage": 0.9726081778483525
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 69,
+                "coverage": 0.9725099601593625
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 12,
+                "coverage": 0.9952362048431918
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 15,
+                "coverage": 0.9940239043824701
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 7676.175699368743,
+                "loss": 3289.7895854437484,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 328.97895854437485,
+                "revenue_impact": 657.9579170887497,
+                "capital_impact": 2193.193056962499,
+                "liquidity_impact": 2741.491321203124
+            },
+            "1987_Crash": {
+                "final_value": 5482.982642406246,
+                "loss": 5482.982642406246,
+                "drawdown": 50.0,
+                "margin_shortfall": 548.2982642406246,
+                "revenue_impact": 1096.5965284812492,
+                "capital_impact": 4386.386113924997,
+                "liquidity_impact": 4934.684378165621
+            },
+            "COVID_Drop": {
+                "final_value": 8772.772227849993,
+                "loss": 2193.1930569624983,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 219.31930569624978,
+                "revenue_impact": 438.6386113924997,
+                "capital_impact": 1096.5965284812492,
+                "liquidity_impact": 1644.8947927218737
+            },
+            "Rate_Hike": {
+                "final_value": 9869.368756331243,
+                "loss": 1096.5965284812482,
+                "drawdown": 9.999999999999986,
+                "margin_shortfall": 109.65965284812476,
+                "revenue_impact": 219.31930569624967,
+                "capital_impact": 0.0,
+                "liquidity_impact": 548.2982642406237
+            },
+            "Geopolitical": {
+                "final_value": 9321.070492090617,
+                "loss": 1644.8947927218742,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 164.48947927218742,
+                "revenue_impact": 328.97895854437485,
+                "capital_impact": 548.298264240625,
+                "liquidity_impact": 1096.5965284812496
+            },
+            "Liquidity_Shortage": {
+                "final_value": 10417.667020571866,
+                "loss": 548.2982642406259,
+                "drawdown": 5.000000000000016,
+                "margin_shortfall": 54.82982642406263,
+                "revenue_impact": 109.65965284812519,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.3642420526593924e-12
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.18962078066398108,
+            "Momentum": 0.15625614668703985,
+            "Range": 0.12769662453118485,
+            "Volume_Change": 0.1077594110293096,
+            "Returns": 0.05704347826086955,
+            "Volatility": 0.054340880677871926
+        }
+    },
+    "@SB": {
+        "accuracy": 0.9717575023475222,
+        "sharpe": 0.0013978598811554004,
+        "psr": 1.0827620978705645,
+        "dsr": -8.917169657906832,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 170.193897835685,
+                "revenue_impact": 34.038779567137,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 542.7352644015212,
+                "revenue_impact": 108.54705288030425,
+                "capital_impact": 0.0,
+                "liquidity_impact": 134.26322597851345
+            },
+            "mc_var_0.99_1d": {
+                "var": 297.7013637848861,
+                "revenue_impact": 59.540272756977224,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 821.5860234155398,
+                "revenue_impact": 164.31720468310797,
+                "capital_impact": 4.64194656952418,
+                "liquidity_impact": 413.113984992532
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 125.15491897373916,
+                "revenue_impact": 25.030983794747833,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 402.4758117476709,
+                "revenue_impact": 80.49516234953418,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 185.40661287858222,
+                "revenue_impact": 37.08132257571645,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 548.326548746987,
+                "revenue_impact": 109.66530974939741,
+                "capital_impact": 0.0,
+                "liquidity_impact": 139.85451032397918
+            }
+        },
+        "portfolio_var": 89.54353338983542,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 14,
+                "coverage": 0.9944422389837237
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 13,
+                "coverage": 0.9948207171314741
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 61,
+                "coverage": 0.9757840412862246
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 49,
+                "coverage": 0.9804780876494024
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 9,
+                "coverage": 0.9964271536323938
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 9,
+                "coverage": 0.996414342629482
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 5718.608537922109,
+                "loss": 2450.832230538047,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 245.0832230538047,
+                "revenue_impact": 490.16644610760943,
+                "capital_impact": 1633.8881536920314,
+                "liquidity_impact": 2042.3601921150394
+            },
+            "1987_Crash": {
+                "final_value": 4084.720384230078,
+                "loss": 4084.720384230078,
+                "drawdown": 50.0,
+                "margin_shortfall": 408.47203842300775,
+                "revenue_impact": 816.9440768460156,
+                "capital_impact": 3267.7763073840624,
+                "liquidity_impact": 3676.24834580707
+            },
+            "COVID_Drop": {
+                "final_value": 6535.552614768125,
+                "loss": 1633.8881536920308,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 163.3888153692031,
+                "revenue_impact": 326.7776307384062,
+                "capital_impact": 816.9440768460152,
+                "liquidity_impact": 1225.416115269023
+            },
+            "Rate_Hike": {
+                "final_value": 7352.49669161414,
+                "loss": 816.9440768460154,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 81.69440768460154,
+                "revenue_impact": 163.3888153692031,
+                "capital_impact": 0.0,
+                "liquidity_impact": 408.4720384230076
+            },
+            "Geopolitical": {
+                "final_value": 6944.0246531911325,
+                "loss": 1225.416115269023,
+                "drawdown": 14.999999999999991,
+                "margin_shortfall": 122.54161152690227,
+                "revenue_impact": 245.08322305380463,
+                "capital_impact": 408.47203842300746,
+                "liquidity_impact": 816.9440768460153
+            },
+            "Liquidity_Shortage": {
+                "final_value": 7760.968730037148,
+                "loss": 408.4720384230077,
+                "drawdown": 4.999999999999993,
+                "margin_shortfall": 40.84720384230072,
+                "revenue_impact": 81.69440768460154,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.1755290953844103,
+            "Momentum": 0.16630902837584807,
+            "Volatility": 0.09948048917361667,
+            "Volume_Change": 0.0935630663918168,
+            "Range": 0.06596065052756746,
+            "Returns": 0.037823721920023166
+        }
+    },
+    "@YM": {
+        "accuracy": 0.9771358403342668,
+        "sharpe": 0.019918141777064115,
+        "psr": 15.422772014681769,
+        "dsr": 5.426426667834451,
+        "monte_carlo_var": {
+            "mc_var_0.95_1d": {
+                "var": 321.4662165750229,
+                "revenue_impact": 64.29324331500457,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.95_10d": {
+                "var": 1036.1037601548182,
+                "revenue_impact": 207.22075203096367,
+                "capital_impact": 0.0,
+                "liquidity_impact": 212.9182025022743
+            },
+            "mc_var_0.99_1d": {
+                "var": 573.071817441459,
+                "revenue_impact": 114.6143634882918,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "mc_var_0.99_10d": {
+                "var": 1568.1747835733138,
+                "revenue_impact": 313.6349567146628,
+                "capital_impact": 0.0,
+                "liquidity_impact": 744.9892259207699
+            }
+        },
+        "historical_var": {
+            "hist_var_0.95_1d": {
+                "var": 242.21280103285363,
+                "revenue_impact": 48.44256020657073,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.95_10d": {
+                "var": 671.2497360458835,
+                "revenue_impact": 134.24994720917672,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_1d": {
+                "var": 369.68946625731706,
+                "revenue_impact": 73.93789325146342,
+                "capital_impact": 0.0,
+                "liquidity_impact": 0.0
+            },
+            "hist_var_0.99_10d": {
+                "var": 1023.527177833692,
+                "revenue_impact": 204.7054355667384,
+                "capital_impact": 0.0,
+                "liquidity_impact": 200.34162018114807
+            }
+        },
+        "portfolio_var": 89.54353338983542,
+        "backtest_results": {
+            "mc_var_0.95_1d": {
+                "exceedances": 14,
+                "coverage": 0.9944422389837237
+            },
+            "mc_var_0.95_10d": {
+                "exceedances": 9,
+                "coverage": 0.996414342629482
+            },
+            "mc_var_0.99_1d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "mc_var_0.99_10d": {
+                "exceedances": 0,
+                "coverage": 1.0
+            },
+            "hist_var_0.95_1d": {
+                "exceedances": 37,
+                "coverage": 0.9853116315998413
+            },
+            "hist_var_0.95_10d": {
+                "exceedances": 41,
+                "coverage": 0.9836653386454183
+            },
+            "hist_var_0.99_1d": {
+                "exceedances": 6,
+                "coverage": 0.9976181024215959
+            },
+            "hist_var_0.99_10d": {
+                "exceedances": 9,
+                "coverage": 0.996414342629482
+            }
+        },
+        "stress_results": {
+            "2008_Crash": {
+                "final_value": 11524.597807135613,
+                "loss": 4939.113345915264,
+                "drawdown": 30.000000000000004,
+                "margin_shortfall": 493.9113345915264,
+                "revenue_impact": 987.8226691830529,
+                "capital_impact": 3292.742230610176,
+                "liquidity_impact": 4115.92778826272
+            },
+            "1987_Crash": {
+                "final_value": 8231.855576525439,
+                "loss": 8231.855576525439,
+                "drawdown": 50.0,
+                "margin_shortfall": 823.1855576525439,
+                "revenue_impact": 1646.3711153050879,
+                "capital_impact": 6585.484461220351,
+                "liquidity_impact": 7408.670018872895
+            },
+            "COVID_Drop": {
+                "final_value": 13170.968922440703,
+                "loss": 3292.7422306101744,
+                "drawdown": 19.999999999999996,
+                "margin_shortfall": 329.2742230610175,
+                "revenue_impact": 658.5484461220349,
+                "capital_impact": 1646.3711153050865,
+                "liquidity_impact": 2469.5566729576303
+            },
+            "Rate_Hike": {
+                "final_value": 14817.34003774579,
+                "loss": 1646.371115305088,
+                "drawdown": 9.999999999999998,
+                "margin_shortfall": 164.63711153050875,
+                "revenue_impact": 329.27422306101766,
+                "capital_impact": 2.2737367544323206e-13,
+                "liquidity_impact": 823.1855576525442
+            },
+            "Geopolitical": {
+                "final_value": 13994.154480093246,
+                "loss": 2469.5566729576312,
+                "drawdown": 15.000000000000002,
+                "margin_shortfall": 246.9556672957632,
+                "revenue_impact": 493.91133459152627,
+                "capital_impact": 823.1855576525434,
+                "liquidity_impact": 1646.3711153050872
+            },
+            "Liquidity_Shortage": {
+                "final_value": 15640.525595398332,
+                "loss": 823.185557652545,
+                "drawdown": 5.000000000000004,
+                "margin_shortfall": 82.31855576525447,
+                "revenue_impact": 164.637111530509,
+                "capital_impact": 0.0,
+                "liquidity_impact": 1.0231815394945443e-12
+            }
+        },
+        "mdi_imp": {
+            "Lagged_Returns": 0.177891496643997,
+            "Momentum": 0.15591634440147578,
+            "Range": 0.11195826110148022,
+            "Volume_Change": 0.1065786549317687,
+            "Volatility": 0.0777214739743077,
+            "Returns": 0.04578610481397523
+        }
+    }
+}

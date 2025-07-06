@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+pandas
+sqlalchemy
+xgboost
+shap
+joblib
+plotly
+numpy
+python-multipart
+reportlab
+lightgbm
+weasyprint
+requests
+dash

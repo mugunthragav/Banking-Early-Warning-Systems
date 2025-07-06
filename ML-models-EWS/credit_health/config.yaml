@@ -1,0 +1,54 @@
+data:
+  input_path: data/loan_data.csv
+  output_path: results/loan_risk_predictions.csv
+features:
+  all:
+    - funded_amnt
+    - int_rate
+    - annual_inc
+    - dti
+    - delinq_2yrs
+    - inq_last_6mths
+    - open_acc
+    - pub_rec
+    - total_acc
+    - acc_now_delinq
+    - total_rev_hi_lim
+    - installment
+    - mths_since_last_delinq
+    - mths_since_last_record
+    - term_int
+    - emp_length_int
+    - mths_since_issue_d
+    - mths_since_earliest_cr_line
+    - revol_bal  # Collateral proxy
+    - revol_util  # Collateral proxy
+    - grade_A
+    - grade_B
+    - grade_C
+    - grade_D
+    - grade_E
+    - grade_F
+    - grade_G
+    - home_ownership_MORTGAGE
+    - home_ownership_OWN
+    - home_ownership_RENT
+    - purpose_car
+    - purpose_credit_card
+    - purpose_debt_consolidation
+    - purpose_home_improvement
+    - purpose_house
+    - purpose_major_purchase
+    - purpose_medical
+    - purpose_moving
+    - purpose_other
+    - purpose_small_business
+    - purpose_vacation
+    - purpose_wedding
+    - initial_list_status_f
+    - initial_list_status_w
+models:
+  pd_model: models/pd_model_logistic_regression.pkl
+  lgd_model_dt: models/lgd_model_decision_tree.pkl
+  lgd_model_svr: models/lgd_model_svr.pkl
+  ead_model: models/ead_model_xgboost.pkl

@@ -1,0 +1,177 @@
+/* Title and Headings */
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Section spacing */
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  background: #f9fbfc;
+}
+
+/* File Inputs */
+.file-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* CSV upload row */
+.csv-upload-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.file-weightage-wrapper {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Weightage input with percent symbol */
+.weightage-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.weightage-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-input {
+  width: 80px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.percent-symbol {
+  margin-left: 4px;
+}
+
+/* Buttons */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2980b9;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #1c5980;
+}
+
+.add-button,
+.result-btn {
+  margin-top: 10px;
+}
+
+.clear-btn {
+  background-color: #c0392b;
+}
+
+.clear-btn:hover {
+  background-color: #96281b;
+}
+
+.delete-button {
+  background-color: #e74c3c;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Result section */
+.result-box {
+  padding: 20px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  margin-top: 20px;
+}
+
+/* Excel-style table */
+.excel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 20px;
+}
+
+.excel-table th,
+.excel-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.excel-table thead {
+  background-color: #dceeff;
+  font-weight: bold;
+}
+
+.excel-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.excel-table tbody tr:hover {
+  background-color: #e3f2fd;
+}
+.metrics-box {
+  border: 2px solid #dcdcdc;
+  border-radius: 12px;
+  background-color: #f8fafd;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.metrics-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  text-align: center;
+}
+
+.metric-item {
+  flex: 1;
+  padding: 10px 15px;
+  border-right: 1px solid #ccc;
+}
+
+.metric-item:last-child {
+  border-right: none;
+}
+
+.metric-item h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.metric-item p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2980b9;
+  margin: 0;
+}

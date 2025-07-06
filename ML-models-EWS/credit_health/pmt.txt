@@ -1,0 +1,641 @@
+let me provide my all files , check whether it aligns if not align with the criteria and make it high level industry standard 
+data_gen.py:
+# data_gen.py
+from src.data.synthetic_data import generate_synthetic_data
+
+if __name__ == '__main__':
+    symbols = ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+    generate_synthetic_data(symbols, n_rows_min=600000, n_rows_day=2520)
+
+app.py:
+import dash
+from dash import dcc, html, Input, Output
+from dash import dash_table
+import pickle
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.express as px
+from pathlib import Path
+
+# Initialize the Dash app
+app = dash.Dash(__name__)
+
+# Load the model results
+with open('models/all_commodities_model.pkl', 'rb') as f:
+    results = pickle.load(f)
+
+# Define symbol descriptions based on your provided categories
+symbol_descriptions = {
+    '@CL#C': 'Energy',
+    '@C#C': 'Agriculture',
+    '@ES': 'Equity Index',
+    '@NG': 'Energy',
+    '@SI': 'Metals',
+    '@TY': 'Interest Rate',
+    '@AD': 'Currencies',
+    '@EC': 'Currencies',
+    '@6E': 'Currencies',
+    '@GC': 'Metals',
+    '@LE': 'Equity Index',
+    '@NQ': 'Equity Index',
+    '@SB': 'Equity Index',
+    '@YM': 'Equity Index'
+}
+
+# Extract symbols and prepare data
+expected_symbols = list(symbol_descriptions.keys())
+loaded_symbols = list(results.keys())
+print(f"Expected symbols: {expected_symbols}")
+print(f"Loaded symbols from .pkl: {loaded_symbols}")
+symbols = [s for s in expected_symbols if s in loaded_symbols]
+feature_importance_data = {s: pd.Series(results[s]['mdi_imp']).sort_values(ascending=True) for s in symbols}
+var_data = {s: pd.DataFrame({k: [v] for k, v in results[s]['monte_carlo_var'].items()}, index=[0]) for s in symbols}
+stress_data = {s: pd.DataFrame(results[s]['stress_results']).T for s in symbols}
+
+# App layout with Instructions tab
+app.layout = html.Div([
+    html.H1("Commodity Trading Model Dashboard"),
+    dcc.Tabs([
+        dcc.Tab(label='Dashboard', children=[
+            dcc.Dropdown(
+                id='symbol-dropdown',
+                options=[{'label': f"{s} ({symbol_descriptions[s]})", 'value': s} for s in symbols],
+                value=symbols[0] if symbols else None,
+                style={'width': '50%'}
+            ),
+            html.Div(id='text-output', style={'margin': '20px'}),
+            dcc.Graph(id='feature-importance-chart'),
+            dcc.Graph(id='returns-chart'),
+            dash_table.DataTable(
+                id='var-table',
+                style_table={'overflowX': 'auto', 'margin': '20px'},
+                style_header={'backgroundColor': 'lightgrey', 'fontWeight': 'bold'}
+            ),
+            dash_table.DataTable(
+                id='stress-table',
+                style_table={'overflowX': 'auto', 'margin': '20px'},
+                style_header={'backgroundColor': 'lightgrey', 'fontWeight': 'bold'}
+            )
+        ]),
+        dcc.Tab(label='Instructions', children=[
+            html.Div([
+                html.H3("Dashboard Instructions"),
+                html.P([
+                    "This dashboard visualizes trading model results for various commodities. Here's what each term and output means:",
+                    html.Ul([
+                        html.Li([
+                                    "VaR (Value at Risk): Estimates potential losses due to market fluctuations using Monte Carlo and Historical methods. The VaR Loss Distribution plot shows the frequency of potential losses, with peaks indicating common risk levels."]),
+                        html.Li([
+                                    "Stress Testing: Simulates adverse market conditions (e.g., 2008 Crash, COVID Drop) to assess financial stability. The table shows final value, loss, drawdown, and margin shortfall under these scenarios."]),
+                        html.Li([
+                                    "Feature Importance: Highlights which factors (e.g., Lagged Returns, Volatility) most influence the model, shown as a horizontal bar chart. Longer bars indicate greater impact."]),
+                        html.Li([
+                                    "VaR Loss Distribution: A histogram of simulated losses, color-coded to distinguish different confidence levels (e.g., 95% and 99%). Legends clarify each category."])
+                    ])
+                ]),
+                html.P(
+                    "Outputs include detailed tables for VaR and stress test results, with columns like 'mc_var_0.95_1d' (Monte Carlo VaR at 95% confidence for 1 day) and 'loss' (financial loss in stress scenarios). Use the dropdown to explore different commodities.")
+            ])
+        ])
+    ])
+])
+
+
+# Callback to update charts and tables
+@app.callback(
+    [Output('text-output', 'children'),
+     Output('feature-importance-chart', 'figure'),
+     Output('returns-chart', 'figure'),
+     Output('var-table', 'data'),
+     Output('var-table', 'columns'),
+     Output('stress-table', 'data'),
+     Output('stress-table', 'columns')],
+    [Input('symbol-dropdown', 'value')]
+)
+def update_output(selected_symbol):
+    if not selected_symbol or selected_symbol not in results:
+        return [], {}, {}, [], [], [], []
+
+    result = results[selected_symbol]
+
+    # Text output (removed metrics)
+    text = [
+        html.H3(f"Results for {selected_symbol} ({symbol_descriptions[selected_symbol]})"),
+        html.P("VaR: Estimates potential losses due to market fluctuations using Monte Carlo and Historical methods."),
+        html.P("Stress Testing: Simulates adverse conditions to assess financial stability.")
+    ]
+
+    # Feature Importance Chart with colors and legend
+    fig1 = px.bar(
+        x=feature_importance_data[selected_symbol].values,
+        y=feature_importance_data[selected_symbol].index,
+        orientation='h',
+        title=f'Feature Importance for {selected_symbol} ({symbol_descriptions[selected_symbol]})',
+        labels={'x': 'Importance', 'y': 'Features'},
+        color=feature_importance_data[selected_symbol].values,
+        color_continuous_scale=px.colors.sequential.Viridis
+    )
+    fig1.update_layout(
+        height=400,
+        showlegend=True,
+        coloraxis_colorbar_title="Importance"
+    )
+
+    # VaR Distribution Chart with colors and legend
+    mc_var_values = [result['monte_carlo_var'][k] for k in result['monte_carlo_var']]
+    fig2 = px.histogram(
+        x=mc_var_values,
+        nbins=20,
+        title=f'VaR Loss Distribution for {selected_symbol} ({symbol_descriptions[selected_symbol]})',
+        labels={'x': 'Loss ($)', 'y': 'Count'},
+        color_discrete_sequence=['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728']
+    )
+    fig2.update_layout(
+        height=400,
+        showlegend=True,
+        legend_title="Confidence Levels"
+    )
+
+    # VaR Table with detailed column names
+    var_df = var_data[selected_symbol]
+    var_columns = [
+        {'name': 'Monte Carlo VaR 95% 1 Day', 'id': 'mc_var_0.95_1d'},
+        {'name': 'Monte Carlo VaR 95% 10 Days', 'id': 'mc_var_0.95_10d'},
+        {'name': 'Monte Carlo VaR 99% 1 Day', 'id': 'mc_var_0.99_1d'},
+        {'name': 'Monte Carlo VaR 99% 10 Days', 'id': 'mc_var_0.99_10d'}
+    ]
+    var_data_list = var_df.to_dict('records')
+
+    # Stress Test Table with detailed column names
+    stress_df = stress_data[selected_symbol]
+    stress_columns = [
+        {'name': 'Final Value ($)', 'id': 'final_value'},
+        {'name': 'Loss ($)', 'id': 'loss'},
+        {'name': 'Drawdown (%)', 'id': 'drawdown'},
+        {'name': 'Margin Shortfall ($)', 'id': 'margin_shortfall'}
+    ]
+    stress_data_list = stress_df.to_dict('records')
+
+    return text, fig1, fig2, var_data_list, var_columns, stress_data_list, stress_columns
+
+
+# Run the app
+if __name__ == '__main__':
+    app.run(debug=True)
+src/data/load_data.py:
+# src/data/load_data.py
+import os
+import pandas as pd
+
+def load_contracts(symbol, freq='minutely'):
+    if freq not in ['minutely', 'daily']:
+        raise ValueError("freq must be 'minutely' or 'daily'")
+    data_path = os.path.join(os.path.dirname(__file__), '../../data', freq, f'{symbol}.csv')
+    if not os.path.exists(data_path):
+        raise FileNotFoundError(f"No data found for {symbol} in {freq}")
+    return pd.read_csv(data_path)
+
+# src/data/synthetic_data.py
+import numpy as np
+import pandas as pd
+import os
+
+
+def generate_synthetic_data(symbols, n_rows_min=600000, n_rows_day=2520, start_date='2015-01-01'):
+    sector_params = {
+        'Equity Index': (0.08, 0.15, 4000),  # (annual_ret, annual_vol, start_price)
+        'Interest Rate': (0.03, 0.08, 120),
+        'Agriculture': (0.05, 0.20, 500),
+        'Energy': (0.06, 0.25, 70),
+        'Metals': (0.04, 0.18, 1800),
+        'Currencies': (0.02, 0.10, 1.10)
+    }
+
+    # Create directories if they don't exist
+    os.makedirs('data/minutely', exist_ok=True)
+    os.makedirs('data/daily', exist_ok=True)
+
+    for symbol in symbols:
+        sector = 'Equity Index' if symbol.split('#')[0] in ['@ES', '@NQ'] else \
+            'Interest Rate' if symbol.split('#')[0] in ['@TY', '@GC'] else \
+                'Agriculture' if symbol.split('#')[0] in ['@C', '@S'] else \
+                    'Energy' if symbol.split('#')[0] in ['@CL', '@NG'] else \
+                        'Metals' if symbol.split('#')[0] in ['@SI', '@US'] else \
+                            'Currencies' if symbol.split('#')[0] in ['@AD', '@EC'] else 'Equity Index'
+
+        annual_ret, annual_vol, start_price = sector_params[sector]
+        minute_ret = annual_ret / (252 * 24 * 60)
+        minute_vol = annual_vol / np.sqrt(252 * 24 * 60)
+        daily_ret = annual_ret / 252
+        daily_vol = annual_vol / np.sqrt(252)
+
+        # Minute data (≈416 days)
+        dates_min = pd.date_range(start_date, periods=n_rows_min, freq='min')
+        returns_min = np.random.randn(n_rows_min) * minute_vol + minute_ret
+        prices_min = start_price * np.exp(np.cumsum(returns_min))
+        data_min = pd.DataFrame({
+            'date': dates_min,
+            'open_p': prices_min * (1 + np.random.randn(n_rows_min) * 0.0001),
+            'close_p': prices_min,
+            'volume': np.random.randint(100, 1000, n_rows_min)
+        })
+        data_min.to_csv(f'data/minutely/{symbol}.csv', index=False)
+
+        # Derive daily data from minute data for the available period, then extend
+        daily_data = data_min.set_index('date').resample('B').agg({
+            'open_p': 'first',
+            'close_p': 'last',
+            'volume': 'sum'
+        }).reset_index()
+        # Use all available resampled days (no strict 347 check)
+        base_days = len(daily_data)
+
+        # Extend to 10 years (2,520 business days) with synthetic data
+        remaining_days = n_rows_day - base_days
+        if remaining_days > 0:
+            dates_ext = pd.date_range(daily_data['date'].iloc[-1] + pd.offsets.BDay(1), periods=remaining_days,
+                                      freq='B')
+            last_price = daily_data['close_p'].iloc[-1]
+            returns_ext = np.random.randn(remaining_days) * daily_vol + daily_ret
+            prices_ext = last_price * np.exp(np.cumsum(returns_ext))
+            data_ext = pd.DataFrame({
+                'date': dates_ext,
+                'open_p': prices_ext * (1 + np.random.randn(remaining_days) * 0.001),
+                'close_p': prices_ext,
+                'volume': np.random.randint(10000, 100000, remaining_days)
+            })
+            daily_data = pd.concat([daily_data, data_ext])
+
+        daily_data.to_csv(f'data/daily/{symbol}.csv', index=False)
+
+    return {
+        s: {'minutely': pd.read_csv(f'data/minutely/{s}.csv'), 'daily': pd.read_csv(f'data/daily/{s}.csv')}
+        for s in symbols
+    }
+src/features/util.py:
+import pandas as pd
+import numpy as np
+
+def getDailyVol(close):
+    df0 = close.index.searchsorted(close.index - pd.Timedelta(days=1))
+    df0 = df0[df0 > 0]
+    df0 = pd.Series(close.index[df0], index=close.index[close.shape[0] - df0.shape[0]:])
+    df0 = close.loc[df0.index] / close.loc[df0.values].values - 1
+    df0 = df0.ewm(span=50).std()
+    return df0
+src/labeling/filters.py:
+import numpy as np
+import pandas as pd
+
+def cusum(close, h):
+    t_events = []
+    s_pos = s_neg = 0
+    close_diff = np.log(close).diff()
+    for i in range(1, len(close_diff)):
+        s_pos = max(0, s_pos + close_diff.iloc[i])
+        s_neg = min(0, s_neg + close_diff.iloc[i])
+        if s_pos > h or s_neg < -h:
+            t_events.append(close.index[i])
+            s_pos = 0
+            s_neg = 0
+    return pd.DatetimeIndex(t_events)
+src/labeling/labelling.py:
+import numpy as np
+import pandas as pd
+
+def getEvents(close, tEvents, ptSl, trgt, minRet, numThreads=4):
+    events = pd.DataFrame(index=tEvents)
+    events['t1'] = events.index + pd.offsets.Minute(1)
+    events['trgt'] = trgt
+    events['pt'] = ptSl[0] * trgt
+    events['sl'] = -ptSl[1] * trgt
+    if minRet > 0: events = events[close.loc[events.index].pct_change() >= minRet]
+    return events
+
+def getBins(events, close):
+    label = pd.Series(0, index=close.index)
+    for t1 in events['t1']:
+        if t1 in close.index:
+            label.loc[t1] = 1
+    return pd.DataFrame({'bin': label})
+
+src/models/active_signals.py:
+import numpy as np
+from multiprocessing import Pool
+import pandas as pd
+
+
+def process_chunk(chunk):
+    """Process a chunk of signals to calculate average active signals."""
+    active = np.nansum(chunk, axis=0) / chunk.shape[0]
+    return active
+
+
+def avgActiveSignals(signals, window=50):
+    """Calculate the average active signals across a rolling window using multiprocessing."""
+    signals_array = signals.values
+    n = len(signals)
+    chunks = [signals_array[max(0, i - window):i + 1] for i in range(window, n)]
+
+    with Pool() as pool:
+        results = pool.map(process_chunk, chunks)
+
+    avg_signals = pd.Series(np.nan, index=signals.index)
+    for i, active in enumerate(results, start=window):
+        avg_signals.iloc[i] = active if not np.isnan(active) else np.nan
+
+    return avg_signals
+
+src/models/cv.py:
+from sklearn.model_selection import KFold, GridSearchCV
+import numpy as np
+
+def cvScore(clf, X, y, scoring='accuracy', cv=None, t1=None, pctEmbargo=0.01):
+    if cv is None:
+        cv = KFold(n_splits=min(5, len(X)), shuffle=True, random_state=42)
+    scores = []
+    for train_idx, test_idx in cv.split(X):
+        clf.fit(X.iloc[train_idx], y.iloc[train_idx])
+        scores.append(clf.score(X.iloc[test_idx], y.iloc[test_idx]))
+    return np.array(scores)
+src/models/feature_imp.py;
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
+
+def featImpMDI(fit, featNames):
+    return pd.Series(fit.feature_importances_, index=featNames).sort_values(ascending=False)
+
+def featImpMDA(clf, X, y, cv=None, t1=None, scoring='accuracy', pctEmbargo=0.01):
+    if cv is None:
+        cv = KFold(n_splits=min(5, len(X)), shuffle=True, random_state=42)
+    imp = []
+    for train_idx, test_idx in cv.split(X):
+        fit = clf.fit(X.iloc[train_idx], y.iloc[train_idx])
+        acc_full = fit.score(X.iloc[test_idx], y.iloc[test_idx])
+        imp.append([acc_full] + [fit.score(X.iloc[test_idx].drop(col, axis=1), y.iloc[test_idx])
+                                for col in X.columns])
+    imp = np.mean(imp, axis=0)
+    return pd.DataFrame({'mean': imp[1:] - imp[0], 'std': np.std(imp[1:], axis=0)}, index=X.columns)
+src/utils/stats.py:
+import numpy as np
+
+def psr(sharpe, T, skew, kurtosis):
+    return sharpe * np.sqrt(T) / np.sqrt(1 - skew * sharpe + (kurtosis/4) * sharpe**2)
+
+def dsr(sharpe, sharpe_std, N, T, skew, kurtosis):
+    return (sharpe * np.sqrt(T) - N * sharpe_std) / np.sqrt(1 - skew * sharpe + (kurtosis/4) * sharpe**2)
+src/visualization/plots.py:
+# src/visualization/plots.py
+import matplotlib.pyplot as plt
+import os
+
+
+def plot_returns(returns, symbol):
+    """
+    Plot cumulative returns for a given symbol and save to output directory.
+
+    Args:
+        returns (pd.Series): Series of returns.
+        symbol (str): Symbol name for the plot title and file name.
+    """
+    plt.figure(figsize=(10, 6))
+    plt.plot(returns.cumsum(), label='Cumulative Returns')
+    plt.title(f'Cumulative Returns for {symbol}')
+    plt.xlabel('Time')
+    plt.ylabel('Cumulative Return')
+    plt.legend()
+    os.makedirs('output', exist_ok=True)
+    plt.savefig(f'output/{symbol}_returns.png')
+    plt.close()
+	
+
+
+
+def calculate_portfolio_var(symbols, weights, prices_dict, confidence_level=0.95, horizon=1, simulations=5000):
+    portfolio_returns = np.zeros(simulations)
+    for symbol, weight in zip(symbols, weights):
+        returns = prices_dict[symbol].pct_change().dropna()
+        mean_return = returns.mean()
+        std_return = returns.std() * np.sqrt(horizon)
+        simulated_returns = np.random.normal(mean_return, std_return, simulations)
+        portfolio_returns += weight * simulated_returns
+    losses = -portfolio_returns * prices_dict[symbols[0]].iloc[-1] * sum(weights)
+    return np.percentile(losses, (1 - confidence_level) * 100)
+
+
+def backtest_var(prices, var_dict, lookback=252):
+    returns = prices.pct_change().dropna()
+    historical_losses = -(returns.rolling(lookback).apply(lambda x: x.prod() - 1) * prices).dropna()
+    backtest_results = {}
+    for var_key, var_value in var_dict.items():
+        exceedances = (historical_losses > var_value).sum()
+        coverage = 1 - exceedances / len(historical_losses) if len(historical_losses) > 0 else np.nan
+        backtest_results[var_key] = {'exceedances': exceedances, 'coverage': coverage}
+    return backtest_results
+def run_strategy(symbols, use_synthetic=False, all_results=None):
+    if all_results is None:
+        all_results = {}
+    if use_synthetic:
+        data_dict = generate_synthetic_data(symbols, n_rows_min=600000, n_rows_day=2520)
+    else:
+        data_dict = {s: {'minutely': load_contracts(s, freq='minutely'), 'daily': load_contracts(s, freq='daily')}
+                     for s in symbols if os.path.exists(f'data/daily/{s}.csv')}
+
+    for symbol, data in data_dict.items():
+        minutely_data = data['minutely']
+        daily_data = data['daily']
+
+        minutely_data['date'] = pd.to_datetime(minutely_data['date'], format='%Y-%m-%d %H:%M:%S')
+        print(f"Processing {symbol}: Initial rows = {len(minutely_data)}")
+        bars = minutely_data.groupby(pd.Grouper(key='date', freq='1min')).agg(
+            {'open_p': 'first', 'close_p': 'last', 'volume': 'sum'}).dropna()
+        print(f"After grouping to 1min bars: Rows = {len(bars)}")
+        prices_min = bars['close_p']
+        vol_min = getDailyVol(prices_min)
+        vol_min = vol_min.reindex(prices_min.index).ffill().fillna(vol_min.mean())
+        tEvents = cusum(prices_min, h=0.02 * (1 + vol_min.mean()))
+        events = getEvents(close=prices_min, tEvents=tEvents, ptSl=[2, 4], trgt=vol_min * 2.0, minRet=0.01)
+        if events.empty:
+            print(f"No events for {symbol}. Skipping...")
+            continue
+        labels = getBins(events, prices_min)
+        prices_min_filled = prices_min.ffill().fillna(prices_min.mean())
+        X = pd.DataFrame({
+            'Returns': prices_min_filled.pct_change().fillna(0),
+            'Lagged_Returns': prices_min_filled.pct_change().shift(1).fillna(0),
+            'Volatility': vol_min,
+            'Momentum': prices_min_filled.pct_change(periods=5).rolling(5).mean().fillna(0),
+            'Range': (prices_min_filled.rolling(10).max() - prices_min_filled.rolling(
+                10).min()) / prices_min_filled.replace(0, np.nan).ffill().fillna(0),
+            'Volume_Change': minutely_data.set_index('date').reindex(prices_min.index)['volume'].pct_change().fillna(0)
+        })
+        print(f"Before dropna: X rows = {len(X)}")
+        X = X.dropna()
+        print(f"After dropna: X rows = {len(X)}")
+        if len(X) == 0:
+            print(f"No valid features for {symbol} after dropping NA. Skipping...")
+            continue
+        y = labels['bin'].reindex(X.index).fillna(0)
+
+        # Handle imbalanced data with SMOTE
+        smote = SMOTE(random_state=42)
+        X_res, y_res = smote.fit_resample(X, y)
+        print(f"After SMOTE: X rows = {len(X_res)}, y classes = {np.unique(y_res, return_counts=True)}")
+
+        start_time = time.time()
+        print(f"Starting training for {symbol} at {time.ctime(start_time)}")
+        param_grid = {'max_iter': [50], 'max_depth': [10],
+                      'min_samples_leaf': [20]}  # Adjusted for HistGradientBoosting
+        n_jobs = 2  # Fixed to 2 jobs to reduce memory usage
+        clf = GridSearchCV(HistGradientBoostingClassifier(random_state=42), param_grid, cv=3, n_jobs=n_jobs)
+        X_train, X_test, y_train, y_test = train_test_split(X_res, y_res, test_size=0.2, random_state=42)
+        print(f"Starting model fit at {time.ctime()}")
+        fit_start = time.time()
+        clf.fit(X_train, y_train)
+        fit_duration = time.time() - fit_start
+        print(f"Model fit completed in {fit_duration:.2f} seconds")
+        print(f"Best params: {clf.best_params_}")
+        print(f"Starting feature importance at {time.ctime()}")
+        # Use permutation importance instead
+        perm_importance = permutation_importance(clf.best_estimator_, X_test, y_test, n_repeats=5, random_state=42,
+                                                 n_jobs=n_jobs)
+        mdi_imp = pd.Series(perm_importance.importances_mean, index=X.columns).sort_values(ascending=False)
+        print(f"Feature importance completed in {time.time() - start_time:.2f} seconds")
+
+        accuracy = clf.score(X_test, y_test)
+        print(f"Test accuracy: {accuracy}")
+
+        # Use original X for prediction to match index length
+        signals = pd.DataFrame({'signal': clf.predict_proba(X)[:, 1]}, index=X.index)
+        print(f"Starting active signals calculation at {time.ctime()}")
+        active_signals = avgActiveSignals(signals)
+        print(f"Active signals calculation completed in {time.time() - start_time:.2f} seconds")
+
+        def calculate_returns(signals, X):
+            print(f"Signals length: {len(signals)}, Returns length: {len(X['Returns'].reindex(signals.index))}")
+            aligned_returns = X['Returns'].reindex(signals.index).fillna(0)
+            return signals * aligned_returns
+
+        returns = calculate_returns(active_signals, X)
+        sharpe = returns.mean() / returns.std() * np.sqrt(252 * 24 * 60 / 10080) if returns.std() != 0 else np.nan
+        psr_val = psr(sharpe, len(returns), returns.skew(), returns.kurt()) if not np.isnan(sharpe) else np.nan
+        dsr_val = dsr(sharpe, 0.1, 100, len(returns), returns.skew(), returns.kurt()) if not np.isnan(
+            sharpe) else np.nan
+
+        daily_data['date'] = pd.to_datetime(daily_data['date'], format='%Y-%m-%d')
+        prices_day = pd.Series(daily_data['close_p'].values, index=daily_data['date'])
+        vol_day = getDailyVol(prices_day)
+        vol_day = vol_day.reindex(prices_day.index).ffill()
+
+        print(f"Starting VaR calculations at {time.ctime()}")
+        monte_carlo_var = calculate_var_monte_carlo(prices_day)
+        historical_var = calculate_historical_var(prices_day.pct_change().dropna(), prices_day)
+        portfolio_var = calculate_portfolio_var(symbols, [1 / len(symbols)] * len(symbols), {
+            s: pd.Series(data['daily']['close_p'].values,
+                         index=pd.to_datetime(data['daily']['date'], format='%Y-%m-%d')) for s in symbols})
+        print(f"VaR calculations completed in {time.time() - start_time:.2f} seconds")
+        backtest_results = backtest_var(prices_day, {**monte_carlo_var, **historical_var})
+        stress_scenarios = {
+            '2008_Crash': {'price_factor': 0.7, 'vol_factor': 1.5},
+            '1987_Crash': {'price_factor': 0.5, 'vol_factor': 2.0},
+            'COVID_Drop': {'price_factor': 0.8, 'vol_factor': 1.8},
+            'Rate_Hike': {'price_factor': 0.9, 'vol_factor': 1.3}
+        }
+        print(f"Starting stress test at {time.ctime()}")
+        stress_results = apply_stress_test(prices_day, stress_scenarios, vol_day)
+        print(f"Stress test completed in {time.time() - start_time:.2f} seconds")
+
+        all_results[symbol] = {
+            'accuracy': accuracy,
+            'sharpe': sharpe,
+            'psr': psr_val,
+            'dsr': dsr_val,
+            'monte_carlo_var': monte_carlo_var,
+            'historical_var': historical_var,
+            'portfolio_var': portfolio_var,
+            'backtest_results': backtest_results,
+            'stress_results': stress_results,
+            'mdi_imp': mdi_imp.to_dict()
+        }
+        plot_returns(returns, symbol)
+
+    return all_results  # Return results instead of saving here
+
+
+def run_batch_strategy():
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    symbols_file = os.path.join(project_root, 'data', 'symbols.csv')
+    if not os.path.exists(symbols_file):
+        print(f"symbols.csv not found in {symbols_file}. Using default symbols...")
+        symbols = ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+    else:
+        symbols = pd.read_csv(symbols_file)['iqsymbol'].tolist()
+
+    all_results = {}  # Initialize here to accumulate across batches
+    for i in range(0, len(symbols), 5):
+        batch = symbols[i:i + 5]
+        print(f"Processing batch: {batch}")
+        batch_results = run_strategy(batch, use_synthetic=False, all_results=all_results)
+        all_results.update(batch_results)  # Accumulate results
+
+    os.makedirs('models', exist_ok=True)
+    print(f"Saving results to models/all_commodities_model.pkl at {time.ctime()}")
+    with open('models/all_commodities_model.pkl', 'wb') as f:
+        pickle.dump(all_results, f)
+    print(f"Results saved successfully at {time.ctime()}")
+
+    return all_results
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Financial Machine Learning Application')
+    parser.add_argument('--mode', choices=['strategy', 'batch_strategy'], required=True, help='Run mode')
+    parser.add_argument('--synthetic', action='store_true', help='Use synthetic data')
+    args = parser.parse_args()
+    if args.mode == 'strategy':
+        run_strategy(['@CL#C'], args.synthetic)
+    elif args.mode == 'batch_strategy':
+        run_batch_strategy()
+if __name__ == '__main__':
+    main()
+
+
+
+'output' directory : contains plots png files.
+'models' directory : contains all_commodities_models.py.
+data/daily:
+containans 14 csv files 
+sample data:-
+dateopen_pclose_pvolume2015-01-013999.82712162304373978.08158755365237925562015-01-023977.79166393881634012.929386824614523556752015-01-054013.17169173394364089.86779745810247659462015-01-064090.8479050038274090.3838344029547933962015-01-074089.6483104142174067.2345383535537922662015-01-084068.1386644595344092.7634641735062790813
+data/minutely:
+contains 14 csv files 
+sample data:-
+date,open_p,close_p,volume
+2015-01-01 00:00:00,3999.8271216230437,3999.6423994628117,450
+2015-01-01 00:01:00,3998.7057863503037,3999.2369371509026,179
+2015-01-01 00:02:00,3999.0131180293206,3999.4548582277966,969
+2015-01-01 00:03:00,3998.7105645534784,3998.7754710249137,901
+2015-01-01 00:04:00,4000.419542696751,4000.232069083151,494
+2015-01-01 00:05:00,4001.411110483062,4001.5669567092223,823
+2015-01-01 00:06:00,4001.6365406143614,4001.7988220075626,289
+2015-01-01 00:07:00,4001.766707694873,4001.8532548767166,586
+2015-01-01 00:08:00,4001.1907349372605,4000.724175973403,151
+
+data/symbols.csv
+iqsymbolSector@CL#CEnergy@C#CAgriculture@ESEquity Index@NGEnergy@SIMetals@TYInterest Rate@ADCurrencies@ECCurrencies@6ECurrencies@GCMetals@LEEquity Index@NQEquity Index@SBEquity Index@YMEquity Index
+
+read all the code scrpts and tailor to meet all the nooks and corners of the below criteria and make it high level tool:
+As a Market Risk Officer, I want to measure exposure to market volatility using Value at Risk and stress simulations so that we can preempt systemic risk during downturns.
+
+Acceptance Criteria:
+
+Calculate Value at Risk (VaR) using Monte Carlo simulation and Historical VaR methods.
+
+Run Stress Testing using Scenario Analysis across FX, equities, and commodities.
+
+Simulate impact on revenue, capital reserves, and liquidity buffer under various stress scenarios.
+
+Visualize outcomes using heat maps and dashboards.
+
+Set up periodic simulations (e.g., monthly or quarterly) with automated reporting.

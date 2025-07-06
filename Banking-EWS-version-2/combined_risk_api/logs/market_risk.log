@@ -1,0 +1,84 @@
+2025-06-20 19:24:44,413 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-20 19:24:44,414 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-20 19:24:44,476 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-20 19:24:44,499 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-20 19:25:12,253 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-20 19:25:12,254 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-20 19:25:12,290 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-20 19:25:12,311 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-20 19:25:12,690 - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-20 19:25:12,698 - INFO - Initializing SHAP general Explainer...
+2025-06-20 19:25:12,700 - WARNING - SHAP TreeExplainer/Explainer failed, attempting PermutationExplainer: 'XGBModel' object has no attribute 'feature_weights'
+2025-06-20 19:25:12,707 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-20 19:25:12,711 - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-20 19:25:12,714 - INFO - Initializing SHAP general Explainer...
+2025-06-20 19:25:12,715 - WARNING - SHAP TreeExplainer/Explainer failed, attempting PermutationExplainer: 'XGBModel' object has no attribute 'feature_weights'
+2025-06-20 19:28:51,037 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-20 19:28:51,037 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-20 19:28:51,264 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-20 19:28:51,353 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-20 19:28:51,703 - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-20 19:28:51,703 - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-20 19:28:51,703 - INFO - Initializing SHAP TreeExplainer...
+2025-06-20 19:28:51,703 - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-20 19:28:51,703 - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-20 19:28:51,703 - INFO - Models already initialized, skipping startup.
+2025-06-21 14:49:26,136 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-21 14:49:26,136 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-21 14:49:26,187 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 14:49:26,206 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 14:49:26,206 - CRITICAL - Unexpected error during startup: No module named 'lightgbm'
+2025-06-21 14:49:59,680 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-21 14:49:59,695 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-21 14:49:59,729 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 14:49:59,743 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 14:50:00,159 - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 14:50:00,159 - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 14:50:00,159 - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 14:50:00,159 - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 14:50:00,159 - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 14:50:00,159 - INFO - Models already initialized, skipping startup.
+2025-06-21 15:06:23,447 - ERROR - Prediction endpoint failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Deposit_Trend
+- Funding_Rate
+Feature names seen at fit time, yet now missing:
+- Deposit_Growth_Rate
+- Funding_Cost_Change_Proxy
+
+2025-06-21 15:25:51,155 - ERROR - Prediction endpoint failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Deposit_Trend
+- Funding_Rate
+Feature names seen at fit time, yet now missing:
+- Deposit_Growth_Rate
+- Funding_Cost_Change_Proxy
+
+2025-06-21 15:27:07,805 - ERROR - Prediction endpoint failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Deposit_Trend
+- Funding_Rate
+Feature names seen at fit time, yet now missing:
+- Deposit_Growth_Rate
+- Funding_Cost_Change_Proxy
+
+2025-06-21 15:29:42,457 - ERROR - Error parsing exposed banks/amounts: could not convert string to float: 'string'. Defaulting exposure_to_failed to 0.
+2025-06-21 15:29:42,461 - ERROR - Prediction endpoint failed: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Deposit_Trend
+- Funding_Rate
+Feature names seen at fit time, yet now missing:
+- Deposit_Growth_Rate
+- Funding_Cost_Change_Proxy
+
+2025-06-21 15:32:06,222 - INFO - Loaded results: ['@CL#C', '@C#C', '@ES', '@NG', '@SI', '@TY', '@AD', '@EC', '@6E', '@GC', '@LE', '@NQ', '@SB', '@YM']
+2025-06-21 15:32:06,223 - INFO - Structure for first symbol (@CL#C): ['accuracy', 'sharpe', 'psr', 'dsr', 'monte_carlo_var', 'historical_var', 'portfolio_var', 'backtest_results', 'stress_results', 'mdi_imp']
+2025-06-21 15:32:06,290 - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 15:32:06,312 - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 15:32:06,583 - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 15:32:06,583 - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 15:32:06,583 - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 15:32:06,583 - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 15:32:06,583 - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 15:32:06,583 - INFO - Models already initialized, skipping startup.
+2025-06-21 15:32:32,694 - INFO - Predicted Risk Label: NOT RISKY

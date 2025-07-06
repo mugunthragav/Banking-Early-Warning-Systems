@@ -1,0 +1,50 @@
+symbols:
+  - "@CL#C"
+  - "@C#C"
+  - "@ES"
+  - "@NG"
+  - "@SI"
+  - "@TY"
+  - "@AD"
+  - "@EC"
+  - "@6E"
+  - "@GC"
+  - "@LE"
+  - "@NQ"
+  - "@SB"
+  - "@YM"
+sectors:
+  "@CL#C": "Energy"
+  "@C#C": "Agriculture"
+  "@ES": "Equity Index"
+  "@NG": "Energy"
+  "@SI": "Metals"
+  "@TY": "Interest Rate"
+  "@AD": "Currencies"
+  "@EC": "Currencies"
+  "@6E": "Currencies"
+  "@GC": "Metals"
+  "@LE": "Equity Index"
+  "@NQ": "Equity Index"
+  "@SB": "Equity Index"
+  "@YM": "Equity Index"
+var:
+  confidence_levels: [0.95, 0.99]
+  horizons: [1, 10]
+  simulations: 100000
+stress_scenarios:
+  2008_Crash: {price_factor: 0.7, vol_factor: 1.5}
+  1987_Crash: {price_factor: 0.5, vol_factor: 2.0}
+  COVID_Drop: {price_factor: 0.8, vol_factor: 1.8}
+  Rate_Hike: {price_factor: 0.9, vol_factor: 1.3}
+  Geopolitical: {price_factor: 0.85, vol_factor: 1.6}
+  Liquidity_Shortage: {price_factor: 0.95, vol_factor: 2.0}
+scheduler:
+  interval: "monthly"
+  time: "00:00"
+report:
+  output_dir: "reports"
+  format: "pdf"
+logging:
+  level: "INFO"
+  file: "logs/market_risk.log"

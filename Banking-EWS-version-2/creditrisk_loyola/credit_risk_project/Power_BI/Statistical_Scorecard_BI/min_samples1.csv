@@ -1,0 +1,11 @@
+loan_amnt,funded_amnt,funded_amnt_inv,term,int_rate,installment,grade,emp_length,home_ownership,annual_inc,verification_status,dti,delinq_2yrs,inq_last_6mths,mths_since_last_delinq,open_acc,pub_rec,revol_bal,revol_util,total_acc,initial_list_status,out_prncp,total_pymnt,total_rec_prncp,total_rec_int,total_rec_late_fee,recoveries,collection_recovery_fee,last_pymnt_amnt,tot_coll_amt,tot_cur_bal,total_rev_hi_lim,mths_since_earliest_cr_line,purpose
+32500,32500,32500,60 months,14.99,773.01,C,0,MORTGAGE,1300000,Verified,9.32,0,0,31,7,0,1208,4.3,20,f,0,38213.56,32500,5713.56,0,0,0,27391.42,0,6563,25100,188,home_improvement
+11000,11000,11000,60 months,20.99,297.53,E,10,MORTGAGE,60000,Verified,24.19,1,0,3,18,0,13129,54.7,43,w,9214.67,4450.12,1785.33,2664.79,0,0,0,297.53,0,107972,24000,172,credit_card
+30000,30000,30000,36 months,14.65,1034.83,C,1,MORTGAGE,175000,Verified,13.34,0,0,41,9,0,1906,22.4,38,f,0,32388.64,30000,2388.64,0,0,0,26181.92,0,81539,30000,189,debt_consolidation
+14400,14400,14400,60 months,14.49,338.74,C,2,MORTGAGE,66000,Source Verified,17.69,0,0,31,12,0,12944,74.4,31,w,11901.76,4719.18,2498.24,2220.94,0,0,0,338.74,0,139126,17400,112,debt_consolidation
+15000,15000,14900,36 months,8.9,476.3,A,10,MORTGAGE,85000,Verified,8.3,0,0,39,7,0,5902,67.8,20,f,0,16628.33315,15000,1628.33,0,0,0,8066.82,0,179532,8700,374,debt_consolidation
+10000,10000,10000,36 months,16.2,352.56,C,0,MORTGAGE,42000,Source Verified,27.66,2,1,12,9,0,15161,71.9,36,f,0,12134.60376,10000,2134.6,0,0,0,5436.76,0,68265,21100,207,home_improvement
+12000,12000,11900,60 months,15.95,291.5,D,10,MORTGAGE,93000,Not Verified,15.14,0,0,31,7,0,10258,48.2,48,f,0,17489.81998,12000,5489.82,0,0,0,291.32,0,81539,12000,332,debt_consolidation
+10925,10925,10925,60 months,22.2,302.99,E,9,RENT,40600,Verified,23.62,0,2,73,5,1,8269,79.5,10,f,0,12384.54219,10925,1459.54,0,0,0,4765.71,0,32264,10400,266,debt_consolidation
+24000,24000,23950,36 months,11.99,797.03,B,10,MORTGAGE,88000,Source Verified,9.03,0,0,26,22,0,18668,24.7,45,f,8971.15,19128.6,15028.85,4099.75,0,0,0,797.03,0,324402,75700,383,debt_consolidation
+6000,6000,6000,36 months,10.99,196.41,B,0,OWN,55000,Source Verified,3.52,0,0,30,3,0,4587,67.5,5,w,0,982.05,720.37,261.68,0,0,0,196.41,0,4587,6800,269,vacation

@@ -1,0 +1,12 @@
+pandas
+numpy
+statsmodels
+tensorflow
+keras
+scikit-learn
+joblib
+dash
+xgboost
+dash-bootstrap-components
+plotly
+datetime

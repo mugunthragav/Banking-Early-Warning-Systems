@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+numpy
+pandas
+joblib
+scikit-learn  # scaler_correct_new.pkl was likely created with scikit-learn
+xgboost
+shap
+python-multipart

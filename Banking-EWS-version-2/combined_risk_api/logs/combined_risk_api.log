@@ -1,0 +1,48 @@
+2025-06-21 15:40:21,243 - __main__ - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 15:40:21,259 - routers.liquidity_router - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 15:40:21,385 - routers.liquidity_router - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 15:40:21,385 - routers.liquidity_router - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 15:40:21,385 - routers.liquidity_router - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 15:40:21,385 - routers.liquidity_router - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 15:40:21,385 - routers.liquidity_router - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 15:40:21,385 - routers.liquidity_router - INFO - Models already initialized, skipping startup.
+2025-06-21 15:43:10,025 - app.report - INFO - Report generated: D:\early_warning_loyola\combined_risk_api\reports\@CL#C_report.pdf
+2025-06-21 15:43:10,026 - routers.market_router - ERROR - Error generating report for @CL#C: name 'FileResponse' is not defined
+2025-06-21 15:45:25,194 - __main__ - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 15:45:25,222 - routers.liquidity_router - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 15:45:25,414 - routers.liquidity_router - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 15:45:25,415 - routers.liquidity_router - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 15:45:25,415 - routers.liquidity_router - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 15:45:25,415 - routers.liquidity_router - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 15:45:25,416 - routers.liquidity_router - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 15:45:25,416 - routers.liquidity_router - INFO - Models already initialized, skipping startup.
+2025-06-21 15:45:48,601 - app.report - INFO - Report generated: D:\early_warning_loyola\combined_risk_api\reports\@CL#C_report.pdf
+2025-06-21 15:49:26,403 - __main__ - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 15:49:26,435 - routers.liquidity_router - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 15:49:26,544 - routers.liquidity_router - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 15:49:26,544 - routers.liquidity_router - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 15:49:26,544 - routers.liquidity_router - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 15:49:26,560 - routers.liquidity_router - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 15:49:26,560 - routers.liquidity_router - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 15:49:26,560 - routers.liquidity_router - INFO - Models already initialized, skipping startup.
+2025-06-21 15:49:57,767 - app.report - INFO - Report generated: D:\early_warning_loyola\combined_risk_api\reports\@CL#C_report.pdf
+2025-06-21 15:53:14,872 - app.report - INFO - Report generated: D:\early_warning_loyola\combined_risk_api\reports\@CL#C_report.pdf
+2025-06-21 15:54:59,593 - app.report - INFO - Report generated: D:\early_warning_loyola\combined_risk_api\reports\@AD_report.pdf
+2025-06-21 16:00:35,265 - __main__ - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-21 16:00:35,565 - routers.liquidity_router - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-21 16:00:36,005 - routers.liquidity_router - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-21 16:00:36,005 - routers.liquidity_router - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-21 16:00:36,005 - routers.liquidity_router - INFO - Initializing SHAP TreeExplainer...
+2025-06-21 16:00:36,021 - routers.liquidity_router - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-21 16:00:36,021 - routers.liquidity_router - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-21 16:00:36,021 - routers.liquidity_router - INFO - Models already initialized, skipping startup.
+2025-06-21 16:04:00,046 - routers.liquidity_router - INFO - Predicted Risk Label: NOT RISKY
+2025-06-21 16:04:57,477 - routers.liquidity_router - INFO - Predicted Risk Label: NOT RISKY
+2025-06-26 18:30:38,240 - __main__ - INFO - Starting Combined Risk API on http://0.0.0.0:8000 with CORS for origins: ['*']
+2025-06-26 18:30:38,288 - routers.liquidity_router - INFO - Loading model from PKL: D:\early_warning_loyola\combined_risk_api\models\final_ensembled_model.pkl
+2025-06-26 18:30:38,554 - routers.liquidity_router - INFO - Loading scaler from: D:\early_warning_loyola\combined_risk_api\models\scaler_correct_new.pkl
+2025-06-26 18:30:38,554 - routers.liquidity_router - INFO - [SUCCESS] Liquidity models loaded successfully.
+2025-06-26 18:30:38,554 - routers.liquidity_router - INFO - Initializing SHAP TreeExplainer...
+2025-06-26 18:30:38,554 - routers.liquidity_router - WARNING - SHAP TreeExplainer failed: Model type not yet supported by TreeExplainer: <class 'sklearn.ensemble._stacking.StackingClassifier'>. Attempting PermutationExplainer.
+2025-06-26 18:30:38,554 - routers.liquidity_router - INFO - [SUCCESS] SHAP PermutationExplainer initialized.
+2025-06-26 18:30:38,554 - routers.liquidity_router - INFO - Models already initialized, skipping startup.

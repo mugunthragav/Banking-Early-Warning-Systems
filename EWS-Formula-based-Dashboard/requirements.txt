@@ -1,0 +1,10 @@
+dash
+pandas 
+numpy
+faker 
+QuantLib 
+scikit-learn 
+plotly 
+fastapi 
+uvicorn 
+pydantic
